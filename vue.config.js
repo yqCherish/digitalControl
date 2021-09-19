@@ -26,7 +26,7 @@ module.exports = {
    */
   publicPath: '/',
   outputDir: 'docs',
-  assetsDir: 'static',
+  // assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
