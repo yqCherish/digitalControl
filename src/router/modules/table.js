@@ -64,43 +64,46 @@ const tableRouter = {
       }]
     },
     {
-      path: 'supervise-manage',
-      component: () => import('@/views/table/dynamic-table/index'),
-      name: 'DynamicTable',
+      path: 'supervise-patrol-manage',
+      component: () => import('@/views/supervise/parentContainer'),
+      name: 'patrolResults',
       title: '巡查结果管理',
       children: [{
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'patrol-manage-list',
+        name: 'patrolResultsList',
+        component: () => import('@/views/supervise/patrolResults/resultList'),
         title: '巡查结果列表'
       }, {
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'patrolResultsList',
+        component: () => import('@/views/supervise/patrolResults/resultList'),
         title: '巡查结果统计分析'
       }]
     },
     {
-      path: 'supervise-manage',
-      component: () => import('@/views/table/dynamic-table/index'),
-      name: 'DynamicTable',
+      path: 'supervise-archives-manage',
+      component: () => import('@/views/supervise/parentContainer'),
+      name: 'patrolArchives',
       title: '巡查档案管理',
       children: [{
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'patrol-archives-list',
+        name: 'patrolArchivesList',
+        component: () => import('@/views/supervise/patrolArchives/archivesList'),
         title: '任务管理计划列表'
       }, {
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'patrolArchivesList',
+        component: () => import('@/views/supervise/patrolArchives/archivesList'),
         title: '档案分析'
       }]
     },
     {
-      path: 'supervise-manage',
-      component: () => import('@/views/table/dynamic-table/index'),
-      name: 'DynamicTable',
+      path: 'supervise-contact-manage',
+      component: () => import('@/views/supervise/parentContainer'),
+      name: 'contactMasses',
       title: '联系群众',
       children: [{
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'contact-masses-list',
+        name: 'contactMassesList',
+        component: () => import('@/views/supervise/contactMasses/massesList'),
         title: '联系群众管理列表'
       }, {
         path: 'supervise-manage',
