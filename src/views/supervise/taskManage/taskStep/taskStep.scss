@@ -61,5 +61,37 @@
   color: #111111;
   line-height: 20px;
   font-size: 14px;
+}
+.m-r-18 {
   margin-right: 18px;
+}
+
+.annex-container {
+  height: 56px;
+  background: rgba(0, 0, 0, 0.02);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.annex-result-container {
+  height: 76px;
+  background: #FFFFFF;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.annex-container, .annex-result-container {
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  .order-number {
+    width: 129px;
+    margin-left: 24px
+  }
+  .annex-message {
+    flex: 1;
+    margin-left: 24px
+  }
+  .handle {
+    width: 334px;
+    margin-left: 24px
+  }
 }

@@ -16,11 +16,11 @@
         </div>
       </div>
       <div class="button-container display_row_center">
-        <label class="text-label">问题确认：</label>
-        <el-button v-for="(item,index) in chooseStateList" :type="index===choose_state?'primary':'default'" plain round @click="choose_state=index">{{ item }}</el-button>
+        <label class="text-label m-r-18">问题确认：</label>
+        <el-button v-for="(item,index) in chooseStateList" :key="index" :type="index===choose_state?'primary':'default'" plain round @click="choose_state=index">{{ item }}</el-button>
       </div>
       <div class="display_row_center" style="margin: 15px 0 13px 13px;">
-        <label class="text-label">了解情况：</label>
+        <label class="text-label m-r-18">了解情况：</label>
         <el-button icon="el-icon-plus" type="primary">添加内容</el-button>
       </div>
       <div class="display_row_center" style="margin: 0 0 20px 13px;">
@@ -71,11 +71,11 @@
         </div>
       </div>
       <div class="button-container display_row_center">
-        <label class="text-label">问题确认：</label>
+        <label class="text-label m-r-18">问题确认：</label>
         <el-button v-for="(item,index) in chooseStateList" :type="index===choose_state?'primary':'default'" plain round @click="choose_state=index">{{ item }}</el-button>
       </div>
       <div class="display_row_center" style="margin: 15px 0 13px 13px;">
-        <label class="text-label">了解情况：</label>
+        <label class="text-label m-r-18">了解情况：</label>
         <el-button icon="el-icon-plus" type="primary">添加内容</el-button>
       </div>
       <div class="display_row_center" style="margin: 0 0 20px 13px;">
