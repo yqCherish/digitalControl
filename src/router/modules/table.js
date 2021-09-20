@@ -33,13 +33,14 @@ const tableRouter = {
       }]
     },
     {
-      path: 'supervise-manage',
-      component: () => import('@/views/table/dynamic-table/index'),
-      name: 'DynamicTable',
+      path: 'supervise-plan-manage',
+      component: () => import('@/views/supervise/parentContainer'),
+      name: 'planManage',
       title: '巡查计划管理',
       children: [{
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'plan-manage-list',
+        name: 'planManageList',
+        component: () => import('@/views/supervise/planManage/planList'),
         title: '指标管理计划表'
       }]
     },
