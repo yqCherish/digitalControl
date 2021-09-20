@@ -338,7 +338,7 @@ export default {
       value14: '',
       times: ['第一次', '第二次', '第三次'],
       time: '第一次',
-      currentIndex: 3
+      currentIndex: 1
     }
   }
 }

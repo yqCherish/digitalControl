@@ -46,13 +46,13 @@
     <div class="main-inner-box" style="margin-top: 24px;padding: 14px 17px 24px;">
       <div class="display_row_center" style="margin-bottom: 24px;">
         <label class="text-label">问题报告名称：</label>
-        <el-input v-model="reportName" style="width: 400px;margin-left: 7px;"></el-input>
+        <el-input v-model="reportName" style="width: 400px;margin-left: 7px;" />
       </div>
       <tinymce v-model="content" :height="300" />
       <label style="margin: 24px 0 16px;" class="text-label">政治生态画像：</label>
       <el-input
-        style="width: 100%;margin-left: 0;"
         v-model="textarea2"
+        style="width: 100%;margin-left: 0;"
         type="textarea"
         class="textarea"
         :autosize="{ minRows: 4, maxRows: 6}"
@@ -70,14 +70,14 @@
         <div class="annex-message font-title">附件信息</div>
         <div class="handle font-title">操作</div>
       </div>
-      <div class="display_row_center annex-result-container" v-for="(item, index) in annexList">
+      <div v-for="(item, index) in annexList" class="display_row_center annex-result-container">
         <div class="order-number font-title">{{ index + 1 }}</div>
         <div class="annex-message font-title">
-          <el-input style="width: 371px;" :value="item.message" disabled/>
+          <el-input style="width: 371px;" :value="item.message" disabled />
         </div>
         <div class="handle font-title display_row_center">
           <el-button icon="el-icon-download" type="primary" size="mini" plain round>下载</el-button>
-          <el-button icon="el-icon-upload2" v-if="item.upload" size="mini" type="primary" plain round>上传</el-button>
+          <el-button v-if="item.upload" icon="el-icon-upload2" size="mini" type="primary" plain round>上传</el-button>
           <el-button icon="el-icon-delete" type="danger" size="mini" plain round>删除</el-button>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default {
   },
   data() {
     return {
-      reportName: "关于xxxx企业/部门/个人督查整改情况汇报",
+      reportName: '关于xxxx企业/部门/个人督查整改情况汇报',
       tableData: [{
         name: '0',
         province: '0',
@@ -107,15 +107,15 @@ export default {
         handle: '下载问题清单',
         score: '85.30'
       }],
-      textarea2: "政治画像政治画像政治画像政治画像政治画像",
+      textarea2: '政治画像政治画像政治画像政治画像政治画像',
       annexList: [{
-        message: "",
+        message: '',
         upload: false
       }, {
-        message: "个人领导报告",
+        message: '个人领导报告',
         upload: true
       }, {
-        message: "专项报告",
+        message: '专项报告',
         upload: true
       }],
       content:
