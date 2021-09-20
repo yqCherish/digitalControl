@@ -29,7 +29,8 @@ export default {
   computed: {
     ...mapGetters([
       'permission_routes',
-      'sidebar'
+      'sidebar',
+      'secondMenus'
     ]),
     activeMenu() {
       const route = this.$route

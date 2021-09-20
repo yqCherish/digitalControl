@@ -1,8 +1,10 @@
 <template>
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
-    <sidebar class="sidebar-container" />
+
     <div :class="{hasTagsView:needTagsView}" class="main-container">
+      <sidebar class="sidebar-container" />
+      <sideSecondBar v-if="secondMenus && sidebar.opened" class="sidebar-second-container" />
       <div :class="{'fixed-header':fixedHeader}">
         <navbar />
         <tags-view v-if="needTagsView" />
@@ -17,9 +19,9 @@
 
 <script>
 import RightPanel from '@/components/RightPanel'
-import { AppMain, Navbar, Settings, Sidebar, TagsView } from './components'
+import { AppMain, Navbar, Settings, Sidebar, TagsView, SideSecondBar } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
-import { mapState } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'Layout',
@@ -29,9 +31,13 @@ export default {
     RightPanel,
     Settings,
     Sidebar,
-    TagsView
+    TagsView,
+    SideSecondBar
   },
   mixins: [ResizeMixin],
+  data() {
+    return {}
+  },
   computed: {
     ...mapState({
       sidebar: state => state.app.sidebar,
@@ -40,6 +46,9 @@ export default {
       needTagsView: state => state.settings.tagsView,
       fixedHeader: state => state.settings.fixedHeader
     }),
+    ...mapGetters([
+      'secondMenus'
+    ]),
     classObj() {
       return {
         hideSidebar: !this.sidebar.opened,

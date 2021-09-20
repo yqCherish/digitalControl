@@ -1,26 +1,15 @@
 <template>
   <div v-if="!item.hidden">
     <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
-      <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
-        <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
-          <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="onlyOneChild.meta.title" />
-        </el-menu-item>
-      </app-link>
+      <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}" @click="_link2Page(onlyOneChild)">
+        <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="onlyOneChild.meta.title" />
+      </el-menu-item>
     </template>
-
-    <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
-      <template slot="title">
-        <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
-      </template>
-      <sidebar-item
-        v-for="child in item.children"
-        :key="child.path"
-        :is-nest="true"
-        :item="child"
-        :base-path="resolvePath(child.path)"
-        class="nest-menu"
-      />
-    </el-submenu>
+    <template v-else :index="resolvePath(item.path)">
+      <el-menu-item :index="resolvePath(item.path)" :class="{'submenu-title-noDropdown':!isNest}" @click="showSecondItem(item)">
+        <item v-if="item.meta" :link="true" :icon="item.meta&&item.meta.icon" :title="item.meta&&item.meta.title" />
+      </el-menu-item>
+    </template>
   </div>
 </template>
 
@@ -30,6 +19,7 @@ import { isExternal } from '@/utils/validate'
 import Item from './Item'
 import AppLink from './Link'
 import FixiOSBug from './FixiOSBug'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'SidebarItem',
@@ -50,11 +40,18 @@ export default {
       default: ''
     }
   },
+  computed: {
+    ...mapGetters([
+      'secondMenus'
+    ])
+  },
   data() {
     // To fix https://github.com/PanJiaChen/vue-admin-template/issues/237
     // TODO: refactor with render function
-    this.onlyOneChild = null
-    return {}
+    // this.onlyOneChild = null
+    return {
+      onlyOneChild: null
+    }
   },
   methods: {
     hasOneShowingChild(children = [], parent) {
@@ -88,7 +85,20 @@ export default {
       if (isExternal(this.basePath)) {
         return this.basePath
       }
+      // this.$store.commit('app/TOGGLE_SIDEBAR');
       return path.resolve(this.basePath, routePath)
+    },
+    showSecondItem(item) {
+      console.log('item', item)
+      this.$store.commit('menu/ADD_SECOND_MENU', item)
+      console.log('secondMenus', this.secondMenus)
+    },
+    _link2Page(item) {
+      this.$store.commit('app/TOGGLE_SIDEBAR')
+      this.$store.commit('menu/CLEAR_SECOND_MENU')
+      this.$router.push({
+        name: item.name
+      })
     }
   }
 }

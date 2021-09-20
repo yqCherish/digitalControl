@@ -17,59 +17,59 @@
         </div>
 
         <div class="right-menu-item">
-          <i class="el-icon-edit" style="cursor: pointer"></i>
+          <i class="el-icon-edit" style="cursor: pointer" />
         </div>
-        <el-divider class="top-divider" direction="vertical"></el-divider>
+        <el-divider class="top-divider" direction="vertical" />
         <search id="header-search" class="right-menu-item" />
         <div class="right-menu-item" style="font-size: 12px;">
           juan你好，欢迎登录
         </div>
         <div class="right-menu-item">
           <el-badge :value="3" class="item" style="height: 24px;line-height: 24px;">
-            <i class="el-icon-message" style="cursor: pointer"></i>
+            <i class="el-icon-message" style="cursor: pointer" />
           </el-badge>
         </div>
         <div class="right-menu-item">
-          <i class="el-icon-lock" style="cursor: pointer"></i>
+          <i class="el-icon-lock" style="cursor: pointer" />
         </div>
-        <el-divider class="top-divider" direction="vertical"></el-divider>
+        <el-divider class="top-divider" direction="vertical" />
         <div class="right-menu-item" style="margin-right: 10px;">
-          <i class="el-icon-switch-button"></i>
+          <i class="el-icon-switch-button" />
         </div>
 
-<!--        <error-log class="errLog-container right-menu-item hover-effect" />-->
+        <!--        <error-log class="errLog-container right-menu-item hover-effect" />-->
 
-<!--        <screenfull id="screenfull" class="right-menu-item hover-effect" />-->
+        <!--        <screenfull id="screenfull" class="right-menu-item hover-effect" />-->
 
-<!--        <el-tooltip content="Global Size" effect="dark" placement="bottom">-->
-<!--          <size-select id="size-select" class="right-menu-item hover-effect" />-->
-<!--        </el-tooltip>-->
+        <!--        <el-tooltip content="Global Size" effect="dark" placement="bottom">-->
+        <!--          <size-select id="size-select" class="right-menu-item hover-effect" />-->
+        <!--        </el-tooltip>-->
 
       </template>
 
-<!--      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">-->
-<!--        <div class="avatar-wrapper">-->
-<!--          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">-->
-<!--          <i class="el-icon-caret-bottom" />-->
-<!--        </div>-->
-<!--        <el-dropdown-menu slot="dropdown">-->
-<!--          <router-link to="/profile/index">-->
-<!--            <el-dropdown-item>Profile</el-dropdown-item>-->
-<!--          </router-link>-->
-<!--          <router-link to="/">-->
-<!--            <el-dropdown-item>Dashboard</el-dropdown-item>-->
-<!--          </router-link>-->
-<!--          <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">-->
-<!--            <el-dropdown-item>Github</el-dropdown-item>-->
-<!--          </a>-->
-<!--          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">-->
-<!--            <el-dropdown-item>Docs</el-dropdown-item>-->
-<!--          </a>-->
-<!--          <el-dropdown-item divided @click.native="logout">-->
-<!--            <span style="display:block;">Log Out</span>-->
-<!--          </el-dropdown-item>-->
-<!--        </el-dropdown-menu>-->
-<!--      </el-dropdown>-->
+      <!--      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">-->
+      <!--        <div class="avatar-wrapper">-->
+      <!--          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">-->
+      <!--          <i class="el-icon-caret-bottom" />-->
+      <!--        </div>-->
+      <!--        <el-dropdown-menu slot="dropdown">-->
+      <!--          <router-link to="/profile/index">-->
+      <!--            <el-dropdown-item>Profile</el-dropdown-item>-->
+      <!--          </router-link>-->
+      <!--          <router-link to="/">-->
+      <!--            <el-dropdown-item>Dashboard</el-dropdown-item>-->
+      <!--          </router-link>-->
+      <!--          <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">-->
+      <!--            <el-dropdown-item>Github</el-dropdown-item>-->
+      <!--          </a>-->
+      <!--          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">-->
+      <!--            <el-dropdown-item>Docs</el-dropdown-item>-->
+      <!--          </a>-->
+      <!--          <el-dropdown-item divided @click.native="logout">-->
+      <!--            <span style="display:block;">Log Out</span>-->
+      <!--          </el-dropdown-item>-->
+      <!--        </el-dropdown-menu>-->
+      <!--      </el-dropdown>-->
     </div>
   </div>
 </template>
@@ -115,7 +115,12 @@ export default {
 .navbar {
   height: 50px;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
