@@ -59,8 +59,9 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '待办任务'
       }, {
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'finished-list',
+        name: 'finishList',
+        component: () => import('@/views/supervise/taskManage/finishedList/index'),
         title: '已办任务'
       }]
     },

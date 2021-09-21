@@ -171,8 +171,7 @@
             :page-size="100"
             layout="total, sizes, prev, pager, next, jumper"
             :total="400"
-            @size-change="handleSizeChange"
-            @current-change="handleCurrentChange"
+
           />
           <!-- <el-button size='mini'>确定</el-button> -->
         </div>
@@ -207,6 +206,7 @@ export default {
         userChannel: '',
         timeData: ''
       },
+      currentPage4: 1,
       lyOptions1: [
         {
           label: '待发布',
