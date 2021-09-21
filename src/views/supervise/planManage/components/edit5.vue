@@ -345,20 +345,188 @@
                       />
                     </el-select>
                   </div>
-                  <div class="row-line">
+                  <div class="row-line rel">
                     <label style="width: 330px">被巡单位负责人：</label>
                     <el-input value="张三，李四，王五" />
-                    <el-button class="mar_l20" plain>选择</el-button>
+                    <el-button
+                      class="mar_l20"
+                      plain
+                      @click="xzddfzr = true"
+                    >选择</el-button>
+                    <div v-show="xzddfzr" class="ab xzzxz">
+                      <div class="title flex">
+                        <div class="fon_14 wei">选择人员</div>
+                        <div class="mar_l20">
+                          <el-input
+                            placeholder="请输人员姓名后查询"
+                            style="width: 260px"
+                          />
+                        </div>
+                        <div class="mar_l20">
+                          <el-button type="primary">查询</el-button>
+                        </div>
+                      </div>
+                      <div class="xzcon pad_20">
+                        <div class="mar_l20" style="line-height: 30px">
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 50px"
+                            >张三
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 50px"
+                            >李四
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 50px"
+                            >王五
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 50px"
+                            >张三
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 50px"
+                            >李四
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 50px"
+                            >王五
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 50px"
+                            >王五
+                            </el-checkbox>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-x-bottom xxfoot">
+                        <el-button
+                          class=""
+                          plain
+                          size="small"
+                          @click="xzddfzr = false"
+                        >确认添加</el-button>
+                        <el-button
+                          class=""
+                          plain
+                          size="small"
+                          @click="xzddfzr = false"
+                        >重置所选</el-button>
+                      </div>
+                    </div>
                   </div>
-                  <div class="row-line">
+                  <div class="row-line rel">
                     <label style="width: 330px">被巡单位执行组：</label>
                     <el-input value="投资发展事业部，网络安全事业部" />
-                    <el-button class="mar_l20" plain>选择</el-button>
+                    <el-button
+                      class="mar_l20"
+                      plain
+                      @click="xzzxz = true"
+                    >选择</el-button>
+                    <div v-show="xzzxz" class="ab xzzxz">
+                      <div class="title flex">
+                        <div class="fon_14 wei">选择被巡单位</div>
+                        <div class="mar_l20">
+                          <el-input
+                            placeholder="请输入单位名称后查询"
+                            style="width: 260px"
+                          />
+                        </div>
+                        <div class="mar_l20">
+                          <el-button type="primary">查询</el-button>
+                        </div>
+                      </div>
+                      <div class="xzcon pad_20">
+                        <div style="line-height: 30px">
+                          <el-checkbox
+                            v-model="checked"
+                          >贵阳火炬软件园管理有限公司
+                          </el-checkbox>
+                        </div>
+                        <div class="mar_l20" style="line-height: 30px">
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                            >创新发展事业部
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                            >网格安全事业部
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                            >融合发展事业部
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                            >投资发展事业部
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                            >云和基础服务事业部
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 100px"
+                            >人力资源中心
+                            </el-checkbox>
+                          </div>
+                          <div>
+                            <el-checkbox
+                              v-model="checked"
+                              style="width: 80px"
+                            >风控中心
+                            </el-checkbox>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-x-bottom xxfoot">
+                        <el-button
+                          class=""
+                          plain
+                          size="small"
+                          @click="xzzxz = false"
+                        >确认添加</el-button>
+                        <el-button
+                          class=""
+                          plain
+                          size="small"
+                          @click="xzzxz = false"
+                        >重置所选</el-button>
+                      </div>
+                    </div>
                   </div>
-                  <el-divider
-                    class="content-title"
-                    content-position="left"
-                  />
+                  <el-divider class="content-title" content-position="left" />
                   <div class="flex wid mar_l30">
                     <div>
                       <el-checkbox
@@ -432,9 +600,7 @@
                   type="primary"
                   @click="shangyibu"
                 >返回上一步</el-button>
-                <el-button
-                  type="primary"
-                >完成配置</el-button>
+                <el-button type="primary">完成配置</el-button>
               </div>
             </div>
           </div>
@@ -470,7 +636,9 @@ export default {
       times: ['第一次', '第二次', '第三次'],
       time: '第一次',
       step: 1,
-      checked: true
+      checked: true,
+      xzzxz: false,
+      xzddfzr: false
     }
   },
   // name: "edit",
@@ -613,6 +781,30 @@ export default {
         }
       }
     }
+  }
+}
+.xzzxz {
+  top: 0px;
+  right: 0px;
+  width: 550px;
+  height: 384px;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  z-index: 1000;
+  .title {
+    background: #f7f8fa;
+    height: 54px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 2px 2px 0px 0px;
+    padding: 0 20px;
+  }
+  .xxfoot {
+    padding: 10px;
+    background: #f7f8fa;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 2px 2px 0px 0px;
   }
 }
 </style>

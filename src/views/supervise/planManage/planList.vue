@@ -129,7 +129,7 @@
                 <el-button
                   icon="el-icon-edit"
                   type="text"
-                  @click="handleEdit4(scope.row)"
+                  @click="handleEdit5(scope.row)"
                 >编辑</el-button>
               </div>
               <div>
