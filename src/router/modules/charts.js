@@ -21,7 +21,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '组织管理'
       }]
-    },{
+    }, {
       path: '/',
       component: () => import('@/views/supervise/parentContainer'),
       title: '岗位管理',
@@ -31,7 +31,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '岗位管理'
       }]
-    },{
+    }, {
       path: '/',
       component: () => import('@/views/supervise/parentContainer'),
       title: '菜单管理',
@@ -41,7 +41,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '菜单管理'
       }]
-    },{
+    }, {
       path: '/',
       component: () => import('@/views/supervise/parentContainer'),
       title: '权限管理',
@@ -51,7 +51,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '权限管理'
       }]
-    },{
+    }, {
       path: '/',
       component: () => import('@/views/supervise/parentContainer'),
       title: '账户管理',
@@ -61,7 +61,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '账户管理'
       }]
-    },{
+    }, {
       path: '/',
       component: () => import('@/views/supervise/parentContainer'),
       title: '届轮+检查领导组织/检查执行组',
@@ -71,7 +71,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '届次管理'
       }]
-    },{
+    }, {
       path: '/',
       component: () => import('@/views/supervise/parentContainer'),
       title: '字典管理',
@@ -81,7 +81,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '字典管理'
       }]
-    },{
+    }, {
       path: '/',
       component: () => import('@/views/supervise/parentContainer'),
       title: '系统通知',
@@ -91,7 +91,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '系统通知'
       }]
-    },{
+    }, {
       path: '/',
       component: () => import('@/views/supervise/parentContainer'),
       title: '日志管理',
@@ -101,7 +101,7 @@ const tableRouter = {
         component: () => import('@/views/table/dynamic-table/index'),
         title: '日志管理'
       }]
-    },
+    }
   ]
 }
 export default tableRouter
