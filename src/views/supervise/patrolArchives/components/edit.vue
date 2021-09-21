@@ -63,7 +63,8 @@
               <el-input v-model="form.name" />
             </div>
             <div class="mar_l20">
-              <el-button size="medium" icon="el-icon-search">下载</el-button>
+              <!-- <el-button size="medium" icon="el-icon-search">下载</el-button> -->
+              <el-button icon="el-icon-download" plain>下载</el-button>
             </div>
           </div>
         </div>

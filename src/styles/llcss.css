@@ -798,6 +798,10 @@ button {
 .subjectcolor {
   color: #1D65EE;
 }
+.subjectbgcolor {
+  background: #1D65EE;
+}
+
 
 .subjectcolor2 {
   color: #155BD4;
@@ -1459,4 +1463,8 @@ button::after {
   height: 14px;
   width: 3px;
   background-color: #155BD4;
+}
+
+.el-drawer{
+  overflow: scroll;
 }

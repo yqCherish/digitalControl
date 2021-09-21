@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="main-box">
-        <div class="main-left">
+        <div class="main-left" :class="{'display_column': currentIndex === 6}">
           <div class="main-title">
             贵州省贵阳市大数据产业集团有限公司
             <span>十五</span>届 监督巡查<span>第三轮 第一次</span>监督整改工作
@@ -244,7 +244,7 @@
           <div v-if="currentIndex===5" class="main-message-box">
             <step5 />
           </div>
-          <div v-if="currentIndex===6" class="main-message-box">
+          <div v-if="currentIndex===6" class="main-message-box" style="flex: 1;">
             <step6 />
           </div>
         </div>
@@ -574,5 +574,9 @@ export default {
     line-height: 22px;
     font-size: 16px;
   }
+}
+.display_column {
+  display: flex;
+  flex-direction: column;
 }
 </style>
