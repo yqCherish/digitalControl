@@ -37,42 +37,38 @@
             :value="item"
           />
         </el-select>
-        <el-input style="width: 231px;" v-model="input3" placeholder="任务名称关键词进行搜索"/>
+        <el-input v-model="input3" style="width: 231px;" placeholder="任务名称关键词进行搜索" />
         <el-button type="primary" style="margin-left: 10px;">查询</el-button>
       </div>
       <div class="table-container">
         <el-table
           :data="tableData"
-          style="width: 100%">
+          style="width: 100%"
+        >
           <el-table-column
             prop="date"
             label="创建时间"
-           >
-          </el-table-column>
+          />
           <el-table-column
             prop="name"
             label="任务名称"
-            >
-          </el-table-column>
+          />
           <el-table-column
             prop="address"
             label="届次信息"
-            >
-          </el-table-column>
+          />
           <el-table-column
             prop="address1"
             label="指标细则数量"
-            >
-          </el-table-column>
+          />
           <el-table-column
             prop="address2"
             label="指标细则分值合计"
-            >
-          </el-table-column>
+          />
           <el-table-column
             label="人员追责信息"
             width="300"
-            >
+          >
             <template slot-scope="scope">
               <div>检查准备：年月日 时分秒~年月日 时分秒</div>
               <div style="margin-top: 10px;">检查了解：年月日 时分秒~年月日 时分秒</div>
@@ -84,8 +80,7 @@
           <el-table-column
             prop="address4"
             label="状态"
-            >
-          </el-table-column>
+          />
           <el-table-column label="操作">
             <template slot-scope="scope">
               <el-link type="primary">巡查结果</el-link>
@@ -99,11 +94,11 @@
 
 <script>
 export default {
-  name: "index",
+  name: 'Index',
   data() {
     return {
-      input2: "",
-      input3: "",
+      input2: '',
+      input3: '',
       sessions: ['十三届', '十四届', '十五届'],
       session: '十五届',
       turns: ['第一轮', '第二轮', '第三轮轮'],
@@ -115,7 +110,7 @@ export default {
         address1: '165',
         address2: '--',
         address4: '已归档',
-        address5: '上海市普陀区金沙江路 1518 弄',
+        address5: '上海市普陀区金沙江路 1518 弄'
       }, {
         date: '2021-04-01 10:00:00',
         name: '2021第二次巡查',
@@ -123,7 +118,7 @@ export default {
         address1: '165',
         address2: '165',
         address3: '上海市普陀区金沙江路 1518 弄',
-        address4: '已归档',
+        address4: '已归档'
       }]
     }
   }

@@ -5,22 +5,22 @@
         <label class="step4-label">
           督查巡查对象：
         </label>
-        <el-input class="step4-input-1" v-model="value1"></el-input>
+        <el-input v-model="value1" class="step4-input-1" />
       </div>
       <div class="display_row_center">
         <label class="step4-label">
           整改对象：
         </label>
-        <el-input class="step4-input-1" v-model="value2"></el-input>
+        <el-input v-model="value2" class="step4-input-1" />
       </div>
       <div class="display_row_center">
         <label class="step4-label">
           整改状态：
         </label>
-        <el-input class="step4-input-1" v-model="value3"></el-input>
+        <el-input v-model="value3" class="step4-input-1" />
       </div>
       <div style="flex: 1;display: flex;align-items: center;flex-direction: column;padding: 80px 0 100px;">
-        <img style="width: 75px;" src="@/assets/img/supervise/taskManage/yes@3x.png"/>
+        <img style="width: 75px;" src="@/assets/img/supervise/taskManage/yes@3x.png">
         <div style="line-height: 30px;color: #111111;font-weight: 500;font-size: 22px;margin-top: 19px;">
           督查巡查完成
         </div>
@@ -38,9 +38,9 @@ export default {
   name: 'Step6',
   data() {
     return {
-      value1: "集团第一巡查组",
-      value2: "xxxx企业/部门",
-      value3: "整改完成",
+      value1: '集团第一巡查组',
+      value2: 'xxxx企业/部门',
+      value3: '整改完成'
     }
   }
 }

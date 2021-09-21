@@ -2,15 +2,15 @@
   <div class="step-container">
     <div class="display_row_center">
       <label class="step4-label">督查巡查对象：</label>
-      <el-input class="step4-input-1" v-model="value1" disabled/>
+      <el-input v-model="value1" class="step4-input-1" disabled />
     </div>
     <div class="display_row_center">
       <label class="step4-label">整改对象：</label>
-      <el-input class="step4-input-1" v-model="value2" disabled/>
+      <el-input v-model="value2" class="step4-input-1" disabled />
     </div>
     <div class="display_row_center">
       <label class="step4-label">督查巡查任务状态：</label>
-      <el-input class="step4-input-1" v-model="value3" disabled/>
+      <el-input v-model="value3" class="step4-input-1" disabled />
     </div>
     <el-table
       :data="tableData"
@@ -58,7 +58,7 @@
     <div class="main-inner-box" style="padding: 16px;">
       <div class="display_row_center" style="margin-bottom: 25px;">
         <label class="step4-label-1">问题报告名称：</label>
-        <el-input style="width: 400px" v-model="reportName"/>
+        <el-input v-model="reportName" style="width: 400px" />
       </div>
       <tinymce v-model="content" :height="300" />
       <label style="margin: 24px 0 16px;" class="text-label">政治生态画像：</label>
@@ -118,20 +118,20 @@
 </template>
 
 <script>
-import Tinymce from '@/components/Tinymce';
+import Tinymce from '@/components/Tinymce'
 export default {
   components: {
     Tinymce
   },
   data() {
     return {
-      value1: "集团第一巡查组",
-      value2: "xxxx企业/部门",
-      value3: "已确认",
-      value4: "",
-      value5: "",
-      value6: "",
-      value7: "",
+      value1: '集团第一巡查组',
+      value2: 'xxxx企业/部门',
+      value3: '已确认',
+      value4: '',
+      value5: '',
+      value6: '',
+      value7: '',
       tableData: [{
         name: '0',
         province: '0',
@@ -141,10 +141,10 @@ export default {
         handle: '下载问题清单',
         score: '85.30'
       }],
-      reportName: "关于xxxx企业/部门/个人督查整改情况汇报",
+      reportName: '关于xxxx企业/部门/个人督查整改情况汇报',
       content:
         `信息必须通过转换而再度为人眼所读取。具体方法依赖于感光`,
-      textarea2: "政治画像政治画像政治画像政治画像政治画像",
+      textarea2: '政治画像政治画像政治画像政治画像政治画像',
       annexList: [{
         message: '巡查报告.doc'
       }, {
