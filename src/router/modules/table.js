@@ -41,7 +41,7 @@ const tableRouter = {
         path: 'plan-manage-list',
         name: 'planManageList',
         component: () => import('@/views/supervise/planManage/planList'),
-        title: '指标管理计划表'
+        title: '指标管理计划'
       }]
     },
     {
@@ -53,16 +53,12 @@ const tableRouter = {
         path: 'task-manage-list',
         name: 'taskManageList',
         component: () => import('@/views/supervise/taskManage/planList'),
-        title: '任务管理计划列表'
-      }, {
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
-        title: '待办任务'
+        title: '进行中任务'
       }, {
         path: 'finished-list',
         name: 'finishList',
         component: () => import('@/views/supervise/taskManage/finishedList/index'),
-        title: '已办任务'
+        title: '已结束任务'
       }]
     },
     {
@@ -74,11 +70,11 @@ const tableRouter = {
         path: 'patrol-manage-list',
         name: 'patrolResultsList',
         component: () => import('@/views/supervise/patrolResults/resultList'),
-        title: '巡查结果列表'
+        title: '巡查结果管理'
       }, {
         path: 'patrolResultsList',
         component: () => import('@/views/supervise/patrolResults/resultList'),
-        title: '巡查结果统计分析'
+        title: '统计分析'
       }]
     },
     {
@@ -90,11 +86,7 @@ const tableRouter = {
         path: 'patrol-archives-list',
         name: 'patrolArchivesList',
         component: () => import('@/views/supervise/patrolArchives/archivesList'),
-        title: '任务管理计划列表'
-      }, {
-        path: 'patrolArchivesList',
-        component: () => import('@/views/supervise/patrolArchives/archivesList'),
-        title: '档案分析'
+        title: '巡查档案管理'
       }]
     },
     {
@@ -106,7 +98,11 @@ const tableRouter = {
         path: 'contact-masses-list',
         name: 'contactMassesList',
         component: () => import('@/views/supervise/contactMasses/massesList'),
-        title: '联系群众管理列表'
+        title: '联系群众'
+      }, {
+        path: 'supervise-manage',
+        component: () => import('@/views/table/dynamic-table/index'),
+        title: '问卷调查'
       }, {
         path: 'supervise-manage',
         component: () => import('@/views/table/dynamic-table/index'),
@@ -114,15 +110,7 @@ const tableRouter = {
       }, {
         path: 'supervise-manage',
         component: () => import('@/views/table/dynamic-table/index'),
-        title: '电话联系信息'
-      }, {
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
-        title: '待处理'
-      }, {
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
-        title: '已处理'
+        title: '联系信息配置'
       }]
     }
   ]

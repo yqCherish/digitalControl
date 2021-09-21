@@ -74,6 +74,5 @@ export default {
   }
   .child-item {
     margin: 15px 0 10px;
-    display: inline-block;
   }
 </style>
