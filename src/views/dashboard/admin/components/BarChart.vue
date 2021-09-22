@@ -48,9 +48,9 @@ export default {
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(this.$el, 'macarons')
+      this.chart = echarts.init(this.$el)
 
-      this.category === 1 ? this.chart.setOption({
+      this.category === 1 && this.chart.setOption({
         tooltip: {
           trigger: 'axis',
           axisPointer: { // 坐标轴指示器，坐标轴触发有效
@@ -73,7 +73,7 @@ export default {
         }],
         yAxis: [{
           type: 'value',
-          axisTick: {
+          axisLine: {
             show: false
           }
         }],
@@ -88,7 +88,8 @@ export default {
             color: '#3F81FF'
           }
         }]
-      }) : this.chart.setOption({
+      });
+      this.category === 0 && this.chart.setOption({
         title: {
           text: '问题数量',
           textStyle: {
@@ -176,7 +177,96 @@ export default {
             }
           }
         ]
-      })
+      });
+      this.category === 2 && this.chart.setOption({
+        title: {
+          text: '分值',
+          padding: [20, 20, 30, 20],
+          textStyle: {
+            color: '#808080',
+            fontSize: 12
+          }
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'line' // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        grid: {
+          top: 60,
+          left: '2%',
+          right: '2%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [{
+          type: 'category',
+          data: ['企业01', '企业02', '企业03', '企业04', '企业05', '企业06', '企业07'],
+          axisTick: {
+            alignWithLabel: true
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: "rgba(0, 0, 0, 0.15)"
+            }
+          },
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#000000',  //更改坐标轴文字颜色
+              fontSize : 12,      //更改坐标轴文字大小
+              fontWeight: 500
+            }
+          }
+        }],
+        yAxis: [{
+          show: true,
+          type: 'value',
+          axisTick: {
+            show: false
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: "rgba(0, 0, 0, 0.15)"
+            }
+          },
+          axisLine: {
+            show: false,
+            lineStyle: {
+              color: "rgba(0, 0, 0, 0.45)"
+            }
+          }
+        }],
+        series: [{
+          name: 'pageA',
+          type: 'bar',
+          stack: 'vistors',
+          barWidth: '25%',
+          data: [92.5, 82.5, 75.5, 69.5, 62.5, 45.5, 25.5],
+          animationDuration,
+          itemStyle: {
+            normal: {
+              barBorderRadius: 10,
+              color: '#3F81FF'
+            },
+            emphasis: {
+              barBorderRadius: 10
+            },
+          },
+          label: {
+            show: true,
+            position: 'top',
+            textStyle: {
+              color: '#1D65EE',  //更改坐标轴文字颜色
+              fontSize : 12,      //更改坐标轴文字大小
+              fontWeight: 500
+            }
+          },
+        }]
+      });
     }
   }
 }

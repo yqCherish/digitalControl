@@ -144,6 +144,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" src="./index.scss">
+<style scoped lang="scss" src="./dashboard1.scss">
 
 </style>
