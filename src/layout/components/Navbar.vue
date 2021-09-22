@@ -1,9 +1,11 @@
 <template>
   <div class="navbar">
-    <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
-
-    <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
-
+<!--    <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />-->
+    <div class="toggle-icon" :is-active="sidebar.opened" @click="toggleSideBar">
+      <img src="@/assets/img/more@3x.png"/>
+    </div>
+<!--    <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />-->
+    <img src="@/assets/img/logo@3x.jpg" style="height: 60px;"/>
     <div class="right-menu">
       <template v-if="device!=='mobile'">
         <div class="right-menu-item margin-10">
@@ -94,7 +96,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: 50px;
+  height: 60px;
   overflow: hidden;
   position: fixed;
   z-index: 1002;
@@ -185,5 +187,15 @@ export default {
 }
 .margin-10 {
   margin: 0 10px;
+}
+.toggle-icon {
+  background: #1D65EE;
+  display: inline-block;
+  padding: 22px;
+  cursor: pointer;
+  float: left;
+  img {
+    width: 16px;
+  }
 }
 </style>

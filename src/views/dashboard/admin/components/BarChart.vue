@@ -69,13 +69,16 @@ export default {
           data: ['企业01', '企业02', '企业03', '企业04', '企业05', '企业06', '企业07'],
           axisTick: {
             alignWithLabel: true
-          }
+          },
+          axisLine: {
+            show: false
+          },
         }],
         yAxis: [{
           type: 'value',
           axisLine: {
             show: false
-          }
+          },
         }],
         series: [{
           name: 'pageA',
@@ -85,8 +88,14 @@ export default {
           data: [29, 52, 40, 64, 70, 88, 50],
           animationDuration,
           itemStyle: {
-            color: '#3F81FF'
-          }
+            normal: {
+              barBorderRadius: 4,
+              color: '#3F81FF'
+            },
+            emphasis: {
+              barBorderRadius: 4
+            }
+          },
         }]
       })
       this.category === 0 && this.chart.setOption({
@@ -118,27 +127,46 @@ export default {
           data: ['企业01', '企业02', '企业03', '企业04', '企业05', '企业06', '企业07'],
           axisTick: {
             alignWithLabel: true
+          },
+          axisLine: {
+            show: false,
+            lineStyle: {
+              color: 'rgba(0, 0, 0, 0.45)'
+            }
           }
         }],
         yAxis: [{
           type: 'value',
           axisTick: {
             show: false
+          },
+          axisLine: {
+            show: false,
+            lineStyle: {
+              color: 'rgba(0, 0, 0, 0.45)'
+            }
           }
         }],
         series: [
           {
             name: '不存在',
             type: 'bar',
-            barGap: 0.2,
+            barGap: 0.8,
+            barWidth: '8%',
             emphasis: {
               focus: 'series'
             },
             data: [12, 4, 3, 8, 2, 5, 14],
             animationDuration,
             itemStyle: {
-              color: '#5AD8A6'
-            }
+              normal: {
+                barBorderRadius: 10,
+                color: '#5AD8A6'
+              },
+              emphasis: {
+                barBorderRadius: 10
+              }
+            },
           },
           {
             name: '存在但不严重',
@@ -146,11 +174,18 @@ export default {
             emphasis: {
               focus: 'series'
             },
+            barWidth: '8%',
             data: [6, 6, 8, 3, 8, 10, 7],
             animationDuration,
             itemStyle: {
-              color: '#6DC8EC'
-            }
+              normal: {
+                barBorderRadius: 10,
+                color: '#6DC8EC'
+              },
+              emphasis: {
+                barBorderRadius: 10
+              }
+            },
           },
           {
             name: '存在且比较严重',
@@ -158,11 +193,18 @@ export default {
             emphasis: {
               focus: 'series'
             },
+            barWidth: '8%',
             data: [10, 9, 14, 6, 11, 5, 2],
             animationDuration,
             itemStyle: {
-              color: '#5B8FF9'
-            }
+              normal: {
+                barBorderRadius: 10,
+                color: '#5B8FF9'
+              },
+              emphasis: {
+                barBorderRadius: 10
+              }
+            },
           },
           {
             name: '存在且非常严重',
@@ -170,11 +212,18 @@ export default {
             emphasis: {
               focus: 'series'
             },
+            barWidth: '8%',
             data: [4, 11, 4, 7, 3, 8, 12],
             animationDuration,
             itemStyle: {
-              color: '#1D65EE'
-            }
+              normal: {
+                barBorderRadius: 10,
+                color: '#1D65EE'
+              },
+              emphasis: {
+                barBorderRadius: 10
+              }
+            },
           }
         ]
       })

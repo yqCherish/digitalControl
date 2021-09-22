@@ -7,7 +7,8 @@ const state = {
   name: '',
   avatar: '',
   introduction: '',
-  roles: []
+  roles: [],
+  identity: 0 // 1,管理员  2,领导组 3,其他
 }
 
 const mutations = {
@@ -25,6 +26,9 @@ const mutations = {
   },
   SET_ROLES: (state, roles) => {
     state.roles = roles
+  },
+  SET_IDENTITY: (state, identity) => {
+    state.identity = identity;
   }
 }
 

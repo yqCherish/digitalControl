@@ -12,7 +12,7 @@
         :collapse-transition="false"
         mode="vertical"
       >
-        <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
+        <sidebar-item v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
       </el-menu>
     </el-scrollbar>
   </div>
@@ -23,14 +23,21 @@ import { mapGetters } from 'vuex'
 import Logo from './Logo'
 import SidebarItem from './SidebarItem'
 import variables from '@/styles/variables.scss'
+import { constantRoutes_admin, constantRoutes_leader, constantRoutes_user } from "@/router/index";
 
 export default {
   components: { SidebarItem, Logo },
+  data() {
+    return {
+      routes: []
+    }
+  },
   computed: {
     ...mapGetters([
       'permission_routes',
       'sidebar',
-      'secondMenus'
+      'secondMenus',
+      'identityState'
     ]),
     activeMenu() {
       const route = this.$route
@@ -50,6 +57,9 @@ export default {
     isCollapse() {
       return !this.sidebar.opened
     }
+  },
+  created() {
+    this.routes = this.identityState === 1 ? constantRoutes_admin : this.identityState === 2 ? constantRoutes_leader : constantRoutes_user;
   }
 }
 </script>
