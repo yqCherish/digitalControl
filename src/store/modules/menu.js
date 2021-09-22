@@ -14,13 +14,13 @@ const mutations = {
     state.secondMenu = null
   },
   SETTING_NAV: (state) => {
-    state.setting_nav = !state.setting_nav;
+    state.setting_nav = !state.setting_nav
   },
   PSD_DIALOG: (state, status) => {
-    state.psd_dialog = status;
+    state.psd_dialog = status
   },
   LOG_OUT_DIALOG: (state, status) => {
-    state.logout_dialog = status;
+    state.logout_dialog = status
   }
 }
 

@@ -17,7 +17,7 @@
         </div>
 
         <div class="right-menu-item">
-          <i class="el-icon-edit" @click="edit_navi" style="cursor: pointer" />
+          <i class="el-icon-edit" style="cursor: pointer" @click="edit_navi" />
         </div>
         <el-divider class="top-divider" direction="vertical" />
         <search id="header-search" class="right-menu-item" />
@@ -83,10 +83,10 @@ export default {
       this.$store.commit('menu/SETTING_NAV')
     },
     showLockItem() {
-      this.$store.commit('menu/PSD_DIALOG', true);
+      this.$store.commit('menu/PSD_DIALOG', true)
     },
     showLogOutDialog() {
-      this.$store.commit('menu/LOG_OUT_DIALOG', true);
+      this.$store.commit('menu/LOG_OUT_DIALOG', true)
     }
   }
 }

@@ -26,29 +26,29 @@
       <div class="navigation-container display_flex_column">
         <div class="new-navi-container">
           <div class="display_flex_center" style="margin-bottom: 14px;">
-            <img class="icon" src="@/assets/img/supervise/taskManage/add.png" />
+            <img class="icon" src="@/assets/img/supervise/taskManage/add.png">
             <div class="navi-title">新增快捷导航</div>
             <div class="navi-desc">
               提示：最多可添加8个
             </div>
           </div>
-          <el-input class="m-b-16" v-model="value1" placeholder="请输入自定义导航名称（限制8个字符）" />
-          <el-input class="m-b-16" v-model="value2" placeholder="请输入跳转链接（仅支持系统内容跳转）" />
+          <el-input v-model="value1" class="m-b-16" placeholder="请输入自定义导航名称（限制8个字符）" />
+          <el-input v-model="value2" class="m-b-16" placeholder="请输入跳转链接（仅支持系统内容跳转）" />
         </div>
-        <el-divider></el-divider>
+        <el-divider />
         <div class="exist-navi-text">
           已添加自定义导航
         </div>
-        <div class="exist-navi-container m-b-16" v-for="item in naviList">
+        <div v-for="item in naviList" class="exist-navi-container m-b-16">
           <div class="display_flex_center">
-            <img class="icon" src="@/assets/img/supervise/taskManage/icon.png" />
+            <img class="icon" src="@/assets/img/supervise/taskManage/icon.png">
             <div class="title">{{ item }}</div>
             <div class="del" style="margin-right: 16px;" @click="_edit(item)">编辑</div>
             <div class="del" @click="_del">删除</div>
           </div>
           <template v-if="editList.includes(item)">
-            <el-input class="input-1" :value="item" readonly/>
-            <el-input class="input-2" v-model="value4" />
+            <el-input class="input-1" :value="item" readonly />
+            <el-input v-model="value4" class="input-2" />
             <div class="bottom-button">
               <el-button type="primary">保存</el-button>
             </div>
@@ -60,37 +60,39 @@
       title="确认删除吗？"
       :visible.sync="del_dialog_show"
       width="20%"
-      center>
+      center
+    >
       <span>删除数据后不可恢复，请谨慎操作</span>
       <span slot="footer" class="dialog-footer">
-    <el-button class="btn" @click="del_dialog_show = false">取消</el-button>
-    <el-button class="btn" type="danger" @click="del_dialog_show = false">确认删除</el-button>
-  </span>
+        <el-button class="btn" @click="del_dialog_show = false">取消</el-button>
+        <el-button class="btn" type="danger" @click="del_dialog_show = false">确认删除</el-button>
+      </span>
     </el-dialog>
     <el-dialog class="psd-dialog" title="密码重置" :visible.sync="psdState" width="543px" @close="showPsdDialog">
       <div class="display_flex_center m-b-22">
         <label class="psd-label">原始密码：</label>
-        <el-input class="psd-input" v-model="value11" placeholder="请输入原始密码"/>
+        <el-input v-model="value11" class="psd-input" placeholder="请输入原始密码" />
       </div>
       <div class="display_flex_center m-b-22">
         <label class="psd-label">新密码：</label>
-        <el-input class="psd-input" v-model="value12" placeholder="请输入新密码"/>
+        <el-input v-model="value12" class="psd-input" placeholder="请输入新密码" />
       </div>
       <div class="display_flex_center">
         <label class="psd-label">新密码确认：</label>
-        <el-input class="psd-input" v-model="value13" placeholder="请再次输入新密码"/>
+        <el-input v-model="value13" class="psd-input" placeholder="请再次输入新密码" />
       </div>
-      <el-divider class="psd-divider"></el-divider>
+      <el-divider class="psd-divider" />
       <div class="display_flex_center" style="flex-direction: row-reverse">
-        <el-button @click="showPsdDialog" type="primary">保存</el-button>
-        <el-button @click="showPsdDialog" style="margin-right: 20px;">关闭</el-button>
+        <el-button type="primary" @click="showPsdDialog">保存</el-button>
+        <el-button style="margin-right: 20px;" @click="showPsdDialog">关闭</el-button>
       </div>
     </el-dialog>
     <el-dialog
       title="确定要退出登录吗？"
       :visible.sync="logoutState"
       width="20%"
-      center>
+      center
+    >
       <span>一旦退出账号许重新进行账号登录</span>
       <span slot="footer" class="dialog-footer">
         <el-button class="btn" @click="hideLogoutDialog">取消</el-button>
@@ -120,14 +122,14 @@ export default {
   mixins: [ResizeMixin],
   data() {
     return {
-      value1: "",
-      value2: "",
-      value3: "",
-      value13: "",
-      value12: "",
-      value11: "",
-      value4: "http://meter.hooss.cn:9090/power2/hooss/i",
-      naviList: ["巡查任务", "督查督办", "报表上报"],
+      value1: '',
+      value2: '',
+      value3: '',
+      value13: '',
+      value12: '',
+      value11: '',
+      value4: 'http://meter.hooss.cn:9090/power2/hooss/i',
+      naviList: ['巡查任务', '督查督办', '报表上报'],
       editList: [],
       del_dialog_show: false,
       psd_show: true
@@ -167,25 +169,25 @@ export default {
       if (this.editList.includes(item)) {
         this.editList.splice(this.editList.findIndex(ite => item === ite), 1)
       } else {
-        this.editList.push(item);
+        this.editList.push(item)
       }
     },
     _del() {
-      this.del_dialog_show = true;
+      this.del_dialog_show = true
     },
     showPsdDialog() {
-      this.$store.commit('menu/PSD_DIALOG', false);
+      this.$store.commit('menu/PSD_DIALOG', false)
     },
     async logoutConfirm() {
-      await this.logout();
-      this.$store.commit('menu/LOG_OUT_DIALOG', false);
+      await this.logout()
+      this.$store.commit('menu/LOG_OUT_DIALOG', false)
     },
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     },
     hideLogoutDialog() {
-      this.$store.commit('menu/LOG_OUT_DIALOG', false);
+      this.$store.commit('menu/LOG_OUT_DIALOG', false)
     }
   }
 }

@@ -85,14 +85,14 @@ export default {
           data: [29, 52, 40, 64, 70, 88, 50],
           animationDuration,
           itemStyle: {
-            color: "#3F81FF"
+            color: '#3F81FF'
           }
         }]
       }) : this.chart.setOption({
         title: {
-          text: "问题数量",
+          text: '问题数量',
           textStyle: {
-            color: "#808080",
+            color: '#808080',
             fontSize: 12
           }
         },
@@ -136,7 +136,7 @@ export default {
             data: [12, 4, 3, 8, 2, 5, 14],
             animationDuration,
             itemStyle: {
-              color: "#5AD8A6"
+              color: '#5AD8A6'
             }
           },
           {
@@ -148,7 +148,7 @@ export default {
             data: [6, 6, 8, 3, 8, 10, 7],
             animationDuration,
             itemStyle: {
-              color: "#6DC8EC"
+              color: '#6DC8EC'
             }
           },
           {
@@ -160,7 +160,7 @@ export default {
             data: [10, 9, 14, 6, 11, 5, 2],
             animationDuration,
             itemStyle: {
-              color: "#5B8FF9"
+              color: '#5B8FF9'
             }
           },
           {
@@ -172,7 +172,7 @@ export default {
             data: [4, 11, 4, 7, 3, 8, 12],
             animationDuration,
             itemStyle: {
-              color: "#1D65EE"
+              color: '#1D65EE'
             }
           }
         ]

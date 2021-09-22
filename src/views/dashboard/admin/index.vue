@@ -50,8 +50,8 @@ import BarChart from './components/BarChart'
 import TransactionTable from './components/TransactionTable'
 import TodoList from './components/TodoList'
 import BoxCard from './components/BoxCard'
-import {deleteRole} from "@/api/role";
-import {mapGetters} from "vuex";
+import { deleteRole } from '@/api/role'
+import { mapGetters } from 'vuex'
 
 const lineChartData = {
   newVisitis: {
@@ -87,13 +87,13 @@ export default {
   },
   data() {
     return {
-      lineChartData: lineChartData.newVisitis,
+      lineChartData: lineChartData.newVisitis
     }
   },
   methods: {
     handleSetLineChartData(type) {
       this.lineChartData = lineChartData[type]
-    },
+    }
   }
 }
 </script>
