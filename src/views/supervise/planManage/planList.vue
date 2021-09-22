@@ -305,6 +305,12 @@ export default {
     },
     jhpz() {
       this.type = 2
+    },
+    handleEdit3() {
+
+    },
+    handleEdit() {
+
     }
   }
 }

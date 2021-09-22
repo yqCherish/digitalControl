@@ -1468,3 +1468,6 @@ button::after {
 .el-drawer{
   overflow: scroll;
 }
+.el-drawer__header > :first-child {
+ outline: none;
+}

@@ -19,16 +19,17 @@ const tableRouter = {
       children: [{
         path: 'key-manage-list',
         name: 'keyManageList',
-        component: () => import('@/views/table/dynamic-table/index'),
+        component: () => import('@/views/patrolLibrary/index'),
         title: '指标管理列表'
       }, {
-        path: 'key-problem-set',
+        path: 'problem-degree-set',
         name: 'keyProblem',
-        component: () => import('@/views/table/dynamic-table/index'),
+        component: () => import('@/views/patrolLibrary/index2'),
         title: '指标问题程度配置'
       }, {
-        path: 'supervise-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'key-score-set',
+        name: 'keyScoreSet',
+        component: () => import('@/views/patrolLibrary/index3'),
         title: '指标分值配置'
       }]
     },

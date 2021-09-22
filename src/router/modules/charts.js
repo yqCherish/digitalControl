@@ -62,13 +62,13 @@ const tableRouter = {
         title: '账户管理'
       }]
     }, {
-      path: '/',
+      path: 'settings-session-manage',
       component: () => import('@/views/supervise/parentContainer'),
       title: '届轮+检查领导组织/检查执行组',
       children: [{
-        path: 'key-manage-list',
-        name: 'organization-manage',
-        component: () => import('@/views/table/dynamic-table/index'),
+        path: 'session-manage-list',
+        name: 'session-manage',
+        component: () => import('@/views/settings/sessionManage/sessionList'),
         title: '届次管理'
       }]
     }, {

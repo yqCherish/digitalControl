@@ -87,17 +87,20 @@
           <div class="flex">
             <el-button
               type="text"
-              @click="handleSeeEdit(scope.row)"
+              @click="handleEdit(scope.row)"
             >数据透视</el-button>
           </div>
         </template>
       </el-table-column>
     </el-table>
+    <edit2 ref="edit2" />
   </div>
 </template>
 
 <script>
+import Edit2 from '@/views/supervise/patrolResults/components/edit2'
 export default {
+  components: { Edit2 },
   data() {
     return {
       activeName: 'dczgjg',
@@ -152,7 +155,10 @@ export default {
     }
   },
   methods: {
-    onSearch() {}
+    onSearch() {},
+    handleEdit(row) {
+      this.$refs['edit2'].showEdit(row)
+    }
   }
 }
 </script>

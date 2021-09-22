@@ -261,7 +261,7 @@
                 </div>
               </div>
               <div class="flex">
-                <el-button class="mar_r20" @click="close">取消</el-button>
+                <el-button class="mar_r20">取消</el-button>
                 <el-button
                   type="primary"
                   @click="xiayibu"
@@ -638,11 +638,7 @@ export default {
       step: 1,
       checked: true,
       xzzxz: false,
-      xzddfzr: false,
-      session: '',
-      turn: '',
-      sessions: [],
-      turns: []
+      xzddfzr: false
     }
   },
   // name: "edit",
@@ -660,9 +656,9 @@ export default {
       this.dialogFormVisible = true
     },
     close() {
-      this.drawer2 = false
-      // this.$refs['form'].resetFields()
-      // this.form = this.$options.data().form
+      this.$refs['form'].resetFields()
+      this.form = this.$options.data().form
+      this.dialogFormVisible = false
     },
     xiayibu() {
       this.step = 2
