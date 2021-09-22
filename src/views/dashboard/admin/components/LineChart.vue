@@ -64,7 +64,7 @@ export default {
     setOptions({ expectedData, actualData } = {}) {
       this.chart.setOption({
         xAxis: {
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: ['企业01', '企业02', '企业03', '企业04', '企业05', '企业06', '企业07'],
           boundaryGap: false,
           axisTick: {
             show: false

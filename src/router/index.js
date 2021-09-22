@@ -81,19 +81,19 @@ export const constantRoutes = [
       }
     ]
   },
-  // {
-  //   path: '/dashboard',
-  //   component: Layout,
-  //   // redirect: '/dashboard',
-  //   children: [
-  //     {
-  //       path: '/dashboard-1',
-  //       component: () => import('@/views/dashboard/component/dashboard1'),
-  //       name: 'Dashboard1',
-  //       meta: { title: '工作台（身份1）', icon: 'dashboard', affix: true }
-  //     }
-  //   ]
-  // },
+  {
+    path: '/dashboard',
+    component: Layout,
+    // redirect: '/dashboard',
+    children: [
+      {
+        path: '/dashboard-1',
+        component: () => import('@/views/dashboard/component/dashboard2'),
+        name: 'Dashboard1',
+        meta: { title: '工作台（身份1）', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
   {
     path: '/profile',
     component: Layout,
