@@ -17,7 +17,7 @@
         </div>
 
         <div class="right-menu-item">
-          <i class="el-icon-edit" style="cursor: pointer" />
+          <i class="el-icon-edit" style="cursor: pointer" @click="edit_navi" />
         </div>
         <el-divider class="top-divider" direction="vertical" />
         <search id="header-search" class="right-menu-item" />
@@ -29,47 +29,14 @@
             <i class="el-icon-message" style="cursor: pointer" />
           </el-badge>
         </div>
-        <div class="right-menu-item">
+        <div class="right-menu-item" @click="showLockItem">
           <i class="el-icon-lock" style="cursor: pointer" />
         </div>
         <el-divider class="top-divider" direction="vertical" />
-        <div class="right-menu-item" style="margin-right: 10px;">
+        <div class="right-menu-item" style="margin-right: 10px;cursor: pointer" @click="showLogOutDialog">
           <i class="el-icon-switch-button" />
         </div>
-
-        <!--        <error-log class="errLog-container right-menu-item hover-effect" />-->
-
-        <!--        <screenfull id="screenfull" class="right-menu-item hover-effect" />-->
-
-        <!--        <el-tooltip content="Global Size" effect="dark" placement="bottom">-->
-        <!--          <size-select id="size-select" class="right-menu-item hover-effect" />-->
-        <!--        </el-tooltip>-->
-
       </template>
-
-      <!--      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">-->
-      <!--        <div class="avatar-wrapper">-->
-      <!--          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">-->
-      <!--          <i class="el-icon-caret-bottom" />-->
-      <!--        </div>-->
-      <!--        <el-dropdown-menu slot="dropdown">-->
-      <!--          <router-link to="/profile/index">-->
-      <!--            <el-dropdown-item>Profile</el-dropdown-item>-->
-      <!--          </router-link>-->
-      <!--          <router-link to="/">-->
-      <!--            <el-dropdown-item>Dashboard</el-dropdown-item>-->
-      <!--          </router-link>-->
-      <!--          <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">-->
-      <!--            <el-dropdown-item>Github</el-dropdown-item>-->
-      <!--          </a>-->
-      <!--          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">-->
-      <!--            <el-dropdown-item>Docs</el-dropdown-item>-->
-      <!--          </a>-->
-      <!--          <el-dropdown-item divided @click.native="logout">-->
-      <!--            <span style="display:block;">Log Out</span>-->
-      <!--          </el-dropdown-item>-->
-      <!--        </el-dropdown-menu>-->
-      <!--      </el-dropdown>-->
     </div>
   </div>
 </template>
@@ -92,6 +59,11 @@ export default {
     SizeSelect,
     Search
   },
+  data() {
+    return {
+      drawer6: false
+    }
+  },
   computed: {
     ...mapGetters([
       'sidebar',
@@ -106,6 +78,15 @@ export default {
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+    },
+    edit_navi() {
+      this.$store.commit('menu/SETTING_NAV')
+    },
+    showLockItem() {
+      this.$store.commit('menu/PSD_DIALOG', true)
+    },
+    showLogOutDialog() {
+      this.$store.commit('menu/LOG_OUT_DIALOG', true)
     }
   }
 }

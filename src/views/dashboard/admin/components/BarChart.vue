@@ -23,6 +23,10 @@ export default {
     height: {
       type: String,
       default: '300px'
+    },
+    category: {
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -46,11 +50,11 @@ export default {
     initChart() {
       this.chart = echarts.init(this.$el, 'macarons')
 
-      this.chart.setOption({
+      this.category === 1 ? this.chart.setOption({
         tooltip: {
           trigger: 'axis',
           axisPointer: { // 坐标轴指示器，坐标轴触发有效
-            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            type: 'line' // 默认为直线，可选为：'line' | 'shadow'
           }
         },
         grid: {
@@ -62,7 +66,7 @@ export default {
         },
         xAxis: [{
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: ['企业01', '企业02', '企业03', '企业04', '企业05', '企业06', '企业07'],
           axisTick: {
             alignWithLabel: true
           }
@@ -77,24 +81,101 @@ export default {
           name: 'pageA',
           type: 'bar',
           stack: 'vistors',
-          barWidth: '60%',
-          data: [79, 52, 200, 334, 390, 330, 220],
-          animationDuration
-        }, {
-          name: 'pageB',
-          type: 'bar',
-          stack: 'vistors',
-          barWidth: '60%',
-          data: [80, 52, 200, 334, 390, 330, 220],
-          animationDuration
-        }, {
-          name: 'pageC',
-          type: 'bar',
-          stack: 'vistors',
-          barWidth: '60%',
-          data: [30, 52, 200, 334, 390, 330, 220],
-          animationDuration
+          barWidth: '30%',
+          data: [29, 52, 40, 64, 70, 88, 50],
+          animationDuration,
+          itemStyle: {
+            color: '#3F81FF'
+          }
         }]
+      }) : this.chart.setOption({
+        title: {
+          text: '问题数量',
+          textStyle: {
+            color: '#808080',
+            fontSize: 12
+          }
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'line' // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        legend: {
+          data: ['不存在', '存在但不严重', '存在且比较严重', '存在且非常严重']
+        },
+        grid: {
+          top: 60,
+          left: '2%',
+          right: '2%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [{
+          type: 'category',
+          data: ['企业01', '企业02', '企业03', '企业04', '企业05', '企业06', '企业07'],
+          axisTick: {
+            alignWithLabel: true
+          }
+        }],
+        yAxis: [{
+          type: 'value',
+          axisTick: {
+            show: false
+          }
+        }],
+        series: [
+          {
+            name: '不存在',
+            type: 'bar',
+            barGap: 0.2,
+            emphasis: {
+              focus: 'series'
+            },
+            data: [12, 4, 3, 8, 2, 5, 14],
+            animationDuration,
+            itemStyle: {
+              color: '#5AD8A6'
+            }
+          },
+          {
+            name: '存在但不严重',
+            type: 'bar',
+            emphasis: {
+              focus: 'series'
+            },
+            data: [6, 6, 8, 3, 8, 10, 7],
+            animationDuration,
+            itemStyle: {
+              color: '#6DC8EC'
+            }
+          },
+          {
+            name: '存在且比较严重',
+            type: 'bar',
+            emphasis: {
+              focus: 'series'
+            },
+            data: [10, 9, 14, 6, 11, 5, 2],
+            animationDuration,
+            itemStyle: {
+              color: '#5B8FF9'
+            }
+          },
+          {
+            name: '存在且非常严重',
+            type: 'bar',
+            emphasis: {
+              focus: 'series'
+            },
+            data: [4, 11, 4, 7, 3, 8, 12],
+            animationDuration,
+            itemStyle: {
+              color: '#1D65EE'
+            }
+          }
+        ]
       })
     }
   }
