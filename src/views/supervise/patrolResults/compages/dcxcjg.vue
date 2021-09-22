@@ -96,17 +96,20 @@
           <div class="flex">
             <el-button
               type="text"
-              @click="handleSeeEdit(scope.row)"
+              @click="handleEdit(scope.row)"
             >数据透视</el-button>
           </div>
         </template>
       </el-table-column>
     </el-table>
+    <edit2 ref="edit2" />
   </div>
 </template>
 
 <script>
+import Edit2 from '@/views/supervise/patrolResults/components/edit2'
 export default {
+  components: { Edit2 },
   data() {
     return {
       formInline: {
@@ -157,6 +160,11 @@ export default {
           name: '面上问题报告'
         }
       ]
+    }
+  },
+  methods: {
+    handleEdit(row) {
+      this.$refs['edit2'].showEdit(row)
     }
   }
 }
