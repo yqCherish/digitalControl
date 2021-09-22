@@ -1,13 +1,13 @@
 <template>
   <div class="left-panel-container">
     <div class="title-container">
-      <div class="title">{{!category ? "巡查内容/重点" : "巡查内容/重点（共30.50/分）"}}</div>
+      <div class="title">{{ !category ? "巡查内容/重点" : "巡查内容/重点（共30.50/分）" }}</div>
       <el-button icon="el-icon-plus" type="primary">添加内容</el-button>
     </div>
-    <div class="list-item" v-for="(item, index) in procedure" :class="{'active': choose_procedure_index===index}" @click="choose_procedure_index = index">
+    <div v-for="(item, index) in procedure" class="list-item" :class="{'active': choose_procedure_index===index}" @click="choose_procedure_index = index">
       <div class="toggle-container">
         <img class="left-icon" src="@/assets/img/supervise/taskManage/black_fold.png">
-        <div class="text">{{item}}</div>
+        <div class="text">{{ item }}</div>
         <div class="button-container">
           <img src="@/assets/img/supervise/taskManage/add1@3x.png">
           <img src="@/assets/img/supervise/taskManage/edit4@3x.png">
@@ -15,7 +15,7 @@
         </div>
       </div>
       <template v-if="choose_procedure_index===index">
-        <div class="content-box" v-for="item in texts">{{item}}</div>
+        <div v-for="item in texts" class="content-box">{{ item }}</div>
       </template>
     </div>
     <el-dialog
@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: "leftPanel",
+  name: 'LeftPanel',
   props: {
     category: {
       type: Number,
@@ -57,16 +57,16 @@ export default {
   data() {
     return {
       procedure: [
-        "一、聚焦基层贯彻落实党的理论路线方针政策和党中央精神（重点3，指标6）",
-        "二、聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败（重点8，指标 48条）",
-        "三、聚焦基层党组织领导班子和干部队伍建设（重点8，指标 48条）",
-        "四、聚焦基层贯彻落实党的理论路线方针政策和党中央精神（重点3，指标6）方针政策和党",
-        "五、聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败（重点8，指标 48条）",
+        '一、聚焦基层贯彻落实党的理论路线方针政策和党中央精神（重点3，指标6）',
+        '二、聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败（重点8，指标 48条）',
+        '三、聚焦基层党组织领导班子和干部队伍建设（重点8，指标 48条）',
+        '四、聚焦基层贯彻落实党的理论路线方针政策和党中央精神（重点3，指标6）方针政策和党',
+        '五、聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败聚焦群众身边腐败（重点8，指标 48条）'
       ],
       texts: [
-          "学习贯彻习近平新时代中国特色社会主义思想和党的十九大及十九届中央历次全会精神，班子成员对“四个意识”四个自信，两个维护等未落实到具体工作当中。",
-          "学习贯彻习近平新时代中国特色社会主义思想和党的十九大及十九届中央历次全会精神，习近平总书记对贵州重要指示批示精神流于形式。",
-          "学习贯彻习近平新时代中国特色社会主义思想和党的十九大及十九届中央历次全会精神，习近平总书记对贵州重要指示批示精神流于形式。",
+        '学习贯彻习近平新时代中国特色社会主义思想和党的十九大及十九届中央历次全会精神，班子成员对“四个意识”四个自信，两个维护等未落实到具体工作当中。',
+        '学习贯彻习近平新时代中国特色社会主义思想和党的十九大及十九届中央历次全会精神，习近平总书记对贵州重要指示批示精神流于形式。',
+        '学习贯彻习近平新时代中国特色社会主义思想和党的十九大及十九届中央历次全会精神，习近平总书记对贵州重要指示批示精神流于形式。'
       ],
       choose_procedure_index: 0,
       dialog_1: false,

@@ -28,7 +28,7 @@ const tableRouter = {
         title: '指标问题程度配置'
       }, {
         path: 'key-score-set',
-        name: "keyScoreSet",
+        name: 'keyScoreSet',
         component: () => import('@/views/patrolLibrary/index3'),
         title: '指标分值配置'
       }]

@@ -2,7 +2,7 @@
   <div class="degree-container">
     <div class="title-container">
       <div class="state">状态</div>
-      <el-input class="input" v-model="value2"/>
+      <el-input v-model="value2" class="input" />
       <el-button type="primary">查询</el-button>
     </div>
     <div class="table-container">
@@ -10,35 +10,33 @@
         <el-table
           :data="tableData"
           border
-          style="width: 100%">
+          style="width: 100%"
+        >
           <el-table-column
             prop="index"
             label="序号"
-          >
-          </el-table-column>
+          />
           <el-table-column
             prop="date"
             label="问题程度类型"
-            >
-          </el-table-column>
+          />
           <el-table-column
             prop="name"
             label="状态"
-            >
-          </el-table-column>
+          />
           <el-table-column
             prop="address"
-            label="关联指标数">
-          </el-table-column>
+            label="关联指标数"
+          />
           <el-table-column
-            label="操作">
-            <template slot-scope="scope" >
+            label="操作"
+          >
+            <template slot-scope="scope">
               <el-switch
                 v-if="scope.$index===0"
                 v-model="switch1"
                 :active-text="switch1 ? '启用': '禁用'"
-                >
-              </el-switch>
+              />
               <el-switch
                 v-if="scope.$index===1"
                 v-model="switch2"
@@ -51,8 +49,7 @@
                 v-if="scope.$index===3"
                 v-model="switch4"
                 :active-text="switch4 ? '启用': '禁用'"
-              >
-              </el-switch>
+              />
               <el-button
                 style="margin-left: 10px;"
                 size="mini"
@@ -76,28 +73,28 @@
 
 <script>
 export default {
-name: "index2",
+  name: 'Index2',
   data() {
     return {
-      value1: "",
-      value2: "",
+      value1: '',
+      value2: '',
       tableData: [{
-        index: "01",
+        index: '01',
         date: '2016-05-02',
         name: '王小虎',
         address: '上海市普陀区金沙江路 1518 弄'
       }, {
-        index: "02",
+        index: '02',
         date: '2016-05-04',
         name: '王小虎',
         address: '上海市普陀区金沙江路 1517 弄'
       }, {
-        index: "03",
+        index: '03',
         date: '2016-05-01',
         name: '王小虎',
         address: '上海市普陀区金沙江路 1519 弄'
       }, {
-        index: "04",
+        index: '04',
         date: '2016-05-03',
         name: '王小虎',
         address: '上海市普陀区金沙江路 1516 弄'
@@ -107,7 +104,7 @@ name: "index2",
       switch3: false,
       switch4: false,
       dialog_1: false,
-      dialog_2: false,
+      dialog_2: false
     }
   }
 }

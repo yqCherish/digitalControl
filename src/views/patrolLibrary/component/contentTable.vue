@@ -3,46 +3,46 @@
     <el-table
       :data="tableData"
       border
-      style="width:100%;">
+      style="width:100%;"
+    >
       <el-table-column
         label="细则编号"
         prop="date"
-      >
-      </el-table-column>
+      />
       <el-table-column
         label="细则名称"
-        width="500">
+        width="500"
+      >
         <template slot-scope="scope">
           <div class="table-text">
             <span class="imp">具体指标:</span>
-            {{scope.row.name}}
+            {{ scope.row.name }}
           </div>
           <div class="table-text-supply">
             <span class="imp">指标说明:</span>
-            {{scope.row.supply}}
+            {{ scope.row.supply }}
           </div>
         </template>
       </el-table-column>
       <el-table-column
+        v-if="!category"
         label="指标分值（分）"
         prop="score"
         width="120"
-        v-if="!category"
-      >
-      </el-table-column>
+      />
       <el-table-column
         label="问题存在程度"
         :width="category?240: 160"
       >
         <template slot-scope="scope">
-          <div class="display_between"><el-checkbox v-model="check1">不存在</el-checkbox><el-input style="width: 84px;" v-model="value1"/></div>
-          <div class="display_between"><el-checkbox v-model="check2">存在但不重要</el-checkbox><el-input style="width: 84px;" v-model="value2"/></div>
-          <div class="display_between"><el-checkbox v-model="check3">存在且比较严重</el-checkbox><el-input style="width: 84px;" v-model="value3"/></div>
-          <div class="display_between"><el-checkbox v-model="check4">存在且非常严重</el-checkbox><el-input style="width: 84px;" v-model="value4"/></div>
+          <div class="display_between"><el-checkbox v-model="check1">不存在</el-checkbox><el-input v-model="value1" style="width: 84px;" /></div>
+          <div class="display_between"><el-checkbox v-model="check2">存在但不重要</el-checkbox><el-input v-model="value2" style="width: 84px;" /></div>
+          <div class="display_between"><el-checkbox v-model="check3">存在且比较严重</el-checkbox><el-input v-model="value3" style="width: 84px;" /></div>
+          <div class="display_between"><el-checkbox v-model="check4">存在且非常严重</el-checkbox><el-input v-model="value4" style="width: 84px;" /></div>
         </template>
       </el-table-column>
       <el-table-column label="操作" width="200">
-        <template slot-scope="scope" v-if="category">
+        <template v-if="category" slot-scope="scope">
           <el-button
             size="mini"
             icon="el-icon-document-checked"
@@ -50,7 +50,7 @@
             plain
           >保存</el-button>
         </template>
-        <template slot-scope="scope" v-else>
+        <template v-else slot-scope="scope">
           <el-button
             size="mini"
             icon="el-icon-edit-outline"
@@ -70,8 +70,8 @@
       <el-pagination
         background
         layout="prev, pager, next"
-        :total="1000">
-      </el-pagination>
+        :total="1000"
+      />
     </div>
   </div>
 </template>
@@ -121,10 +121,10 @@ export default {
       check2: false,
       check3: false,
       check4: false,
-      value1: "",
-      value2: "",
-      value3: "",
-      value4: "",
+      value1: '',
+      value2: '',
+      value3: '',
+      value4: ''
     }
   }
 }
