@@ -99,6 +99,13 @@ export default {
         date1: '',
         type: []
       },
+      labelOptions: [
+        {
+          name: '第十五届',
+          value: '1'
+        }
+      ],
+      lyOptions: [],
       drawer2: false,
       title: '',
       dialogFormVisible: false,

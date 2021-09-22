@@ -128,7 +128,7 @@
       </div>
       <div class="flex-grow-1 right ba_f mar_l20 pad_20">
         <div class="fon_14 wei">指标编号1-1：</div>
-        <div class="fon_12 c3 mar_t10">
+        <div class="fon_12 c3 mar_t10 lh25">
           学习贯彻习近平新时代中国特色社会主义思想和党的十九大及十九届中央历次全会精神，习近平总书记对贵州重要指示批示精神流于形式、走过场，停留在读文件、简单传达的表面层次，班子成员对“四个意识”四个自信，两个维护等未落实到具体工作当中，提现到行动上。
         </div>
         <div class="mar_t20">

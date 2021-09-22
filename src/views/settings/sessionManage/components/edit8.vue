@@ -19,10 +19,13 @@
             <div>导入下载后填写好的模板</div>
           </el-form-item>
         </el-form>
-        <div class="pad_20 ba_f5 flex-center" style="border:1px dashed #999">
-          <div class="t-c wid">
+        <div class="pad_20 ba_f5 flex-center" style="border:1px dashed #999;height:220px">
+          <div class="t-c wid flex-center">
+            <div>
+              <div class="flex-center"><img class="icon" src="@/assets/img/settings/sc.png" style="width:40px;height:40px"></div>
+              <div class="mar_t20">单击或拖动文件到此区域</div>
+            </div>
             <!-- <div class="el-icon-s-order fon_30"></div> -->
-            <div>单击或拖动文件到此区域</div>
           </div>
         </div>
       </div>
