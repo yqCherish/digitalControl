@@ -4,7 +4,7 @@
       title="联系群众反馈问题处理"
       :visible.sync="drawer2"
       direction="rtl"
-      size="600px"
+      size="700px"
     >
       <div class="">
         <div class="pad_20 flex-bet flex-y-top">
@@ -52,7 +52,20 @@
           </el-form>
         </div>
         <div>
-          <!-- <div id="mainEch" style="height: 240px; width: 400px"></div> -->
+          <div>
+            <div class="pad_20 color_9">xxx集团xx届xx轮xx次各企业/部门督查整改工作结果统计</div>
+          </div>
+          <div class="pad_20">
+            <bar-chart :category="1" />
+          </div>
+        </div>
+        <div class="flex mar_t40">
+          <div style="width:400px">
+            <pie-chart :category="0" />
+          </div>
+          <div style="width:400px">
+            <pie-chart :category="1" />
+          </div>
         </div>
       </div>
     </el-drawer>
@@ -61,6 +74,8 @@
 
 <script>
 // import echarts from 'echarts'
+import BarChart from '@/views/supervise/patrolResults/components/BarChart'
+import PieChart from '@/views/supervise/patrolResults/components/PieChart'
 export default {
   // mounted() {
   //    this.$nextTick(() => {
@@ -74,7 +89,7 @@ export default {
   //   this.chart.dispose()
   //   this.chart = null
   // },
-  components: {},
+  components: { BarChart, PieChart },
   data() {
     return {
       formInline: {
