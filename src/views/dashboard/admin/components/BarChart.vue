@@ -88,7 +88,7 @@ export default {
             color: '#3F81FF'
           }
         }]
-      });
+      })
       this.category === 0 && this.chart.setOption({
         title: {
           text: '问题数量',
@@ -177,7 +177,7 @@ export default {
             }
           }
         ]
-      });
+      })
       this.category === 2 && this.chart.setOption({
         title: {
           text: '分值',
@@ -209,14 +209,14 @@ export default {
           axisLine: {
             show: true,
             lineStyle: {
-              color: "rgba(0, 0, 0, 0.15)"
+              color: 'rgba(0, 0, 0, 0.15)'
             }
           },
           axisLabel: {
             show: true,
             textStyle: {
-              color: '#000000',  //更改坐标轴文字颜色
-              fontSize : 12,      //更改坐标轴文字大小
+              color: '#000000', // 更改坐标轴文字颜色
+              fontSize: 12, // 更改坐标轴文字大小
               fontWeight: 500
             }
           }
@@ -230,13 +230,13 @@ export default {
           splitLine: {
             show: true,
             lineStyle: {
-              color: "rgba(0, 0, 0, 0.15)"
+              color: 'rgba(0, 0, 0, 0.15)'
             }
           },
           axisLine: {
             show: false,
             lineStyle: {
-              color: "rgba(0, 0, 0, 0.45)"
+              color: 'rgba(0, 0, 0, 0.45)'
             }
           }
         }],
@@ -254,19 +254,19 @@ export default {
             },
             emphasis: {
               barBorderRadius: 10
-            },
+            }
           },
           label: {
             show: true,
             position: 'top',
             textStyle: {
-              color: '#1D65EE',  //更改坐标轴文字颜色
-              fontSize : 12,      //更改坐标轴文字大小
+              color: '#1D65EE', // 更改坐标轴文字颜色
+              fontSize: 12, // 更改坐标轴文字大小
               fontWeight: 500
             }
-          },
+          }
         }]
-      });
+      })
     }
   }
 }

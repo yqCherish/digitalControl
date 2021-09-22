@@ -38,9 +38,9 @@
             <div class="title">待办事项统计</div>
           </div>
           <div class="task-inner-container display_flex_center">
-            <div class="task-item" :class="{'active': chooseTaskIndex===index}" v-for="(item, index) in taskList" :key="item.name" @click="chooseTaskIndex=index">
-              <div class="num">{{item.num}}</div>
-              <div class="text">{{item.name}}</div>
+            <div v-for="(item, index) in taskList" :key="item.name" class="task-item" :class="{'active': chooseTaskIndex===index}" @click="chooseTaskIndex=index">
+              <div class="num">{{ item.num }}</div>
+              <div class="text">{{ item.name }}</div>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@
               </el-table>
             </div>
             <div style="flex: 1;">
-              <pie-chart :category="6"/>
+              <pie-chart :category="6" />
             </div>
           </div>
         </div>
@@ -107,34 +107,34 @@
       <div class="right-box">
         <div class="display_flex_center">
           <div style="flex: 1;" class="display_flex_center tab-item-box">
-            <div class="tab-item" :class="{'active': tab_choose_index===index}" @click="tab_choose_index=index" v-for="(item,index) in tabs" :key="item">{{ item }}</div>
+            <div v-for="(item,index) in tabs" :key="item" class="tab-item" :class="{'active': tab_choose_index===index}" @click="tab_choose_index=index">{{ item }}</div>
           </div>
           <div class="right-link display_flex_center">
             <div>全部任务</div>
-            <img src="@/assets/img/supervise/taskManage/return.png"/>
+            <img src="@/assets/img/supervise/taskManage/return.png">
           </div>
         </div>
-        <line-item></line-item>
+        <line-item />
       </div>
       <div class="right-box">
         <div class="display_flex_center">
           <div class="tab-item" style="flex: 1">通知公告</div>
           <div class="right-link display_flex_center">
             <div>全部通知</div>
-            <img src="@/assets/img/supervise/taskManage/return.png"/>
+            <img src="@/assets/img/supervise/taskManage/return.png">
           </div>
         </div>
-        <line-item></line-item>
+        <line-item />
       </div>
       <div class="right-box">
         <div class="display_flex_center">
           <div class="tab-item" style="flex: 1">系统消息</div>
           <div class="right-link display_flex_center">
             <div>全部消息</div>
-            <img src="@/assets/img/supervise/taskManage/return.png"/>
+            <img src="@/assets/img/supervise/taskManage/return.png">
           </div>
         </div>
-        <line-item></line-item>
+        <line-item />
       </div>
     </div>
   </div>
@@ -144,9 +144,9 @@
 import PieChart from '../admin/components/PieChart'
 import BarChart from '../admin/components/BarChart'
 import LineChart from '../admin/components/LineChart'
-import LineItem from "@/views/dashboard/component/lineItem/lineItem";
+import LineItem from '@/views/dashboard/component/lineItem/lineItem'
 export default {
-  components: {LineItem, PieChart, BarChart, LineChart },
+  components: { LineItem, PieChart, BarChart, LineChart },
   data() {
     return {
       sessions: ['十三届', '十四届', '十五届'],
@@ -157,26 +157,26 @@ export default {
       time: '第一次',
       taskList: [{
         num: 20,
-        name: "待接收检查任务数"
+        name: '待接收检查任务数'
       }, {
         num: 0,
-        name: "待完成督查整改任务数"
+        name: '待完成督查整改任务数'
       }, {
         num: 2,
-        name: "待审核整改方案"
+        name: '待审核整改方案'
       }, {
         num: 1,
-        name: "待审核整改报告"
+        name: '待审核整改报告'
       }, {
         num: 0,
-        name: "待汇报整改情况"
+        name: '待汇报整改情况'
       }],
       chooseTaskIndex: 0,
       tab_choose_index: 0,
       lineChartData: {
         actualData: [120, 82, 91, 154, 162, 140, 145]
       },
-      tabs: ["待办任务", "已办任务"],
+      tabs: ['待办任务', '已办任务'],
       tableData: [{
         date: '贵州省xxx企业',
         name: '153',

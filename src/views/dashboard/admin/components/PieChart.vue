@@ -114,7 +114,7 @@ export default {
           bottom: 60,
           data: this.chartDataList[this.category].class
         } : {
-          left: "center",
+          left: 'center',
           right: 10,
           bottom: 0,
           data: this.chartDataList[this.category].class

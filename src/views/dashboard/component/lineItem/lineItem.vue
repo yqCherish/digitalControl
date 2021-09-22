@@ -1,9 +1,9 @@
 <template>
   <div class="text-container">
-    <div class="display_flex_center m-b-17" v-for="item in dataList">
-      <div class="date">{{item.date}}</div>
-      <div class="content">{{item.content}}</div>
-      <div class="state" v-if="item.finished">已办</div>
+    <div v-for="item in dataList" class="display_flex_center m-b-17">
+      <div class="date">{{ item.date }}</div>
+      <div class="content">{{ item.content }}</div>
+      <div v-if="item.finished" class="state">已办</div>
       <template v-else>
         <div class="active-state">标为已办</div>
         <div class="active-state m-l-12">查看</div>
@@ -17,28 +17,28 @@ export default {
   data() {
     return {
       dataList: [{
-        date: "2021/04/28",
-        content: "第十五届2021年第一次巡查任务过程中的局部…",
+        date: '2021/04/28',
+        content: '第十五届2021年第一次巡查任务过程中的局部…',
         finished: false
       }, {
-        date: "2021/04/28",
-        content: "第十五届2021年第一次巡查任务过程中的局部…",
+        date: '2021/04/28',
+        content: '第十五届2021年第一次巡查任务过程中的局部…',
         finished: false
       }, {
-        date: "2021/04/28",
-        content: "第十五届2021年第一次巡查任务过程中的局部…",
+        date: '2021/04/28',
+        content: '第十五届2021年第一次巡查任务过程中的局部…',
         finished: false
       }, {
-        date: "2021/04/28",
-        content: "第十五届2021年第一次巡查任务过程中的局部…",
+        date: '2021/04/28',
+        content: '第十五届2021年第一次巡查任务过程中的局部…',
         finished: false
       }, {
-        date: "2021/04/28",
-        content: "第十五届2021年第一次巡查任务过程中的局部…",
+        date: '2021/04/28',
+        content: '第十五届2021年第一次巡查任务过程中的局部…',
         finished: true
       }, {
-        date: "2021/04/28",
-        content: "第十五届2021年第一次巡查任务过程中的局部…",
+        date: '2021/04/28',
+        content: '第十五届2021年第一次巡查任务过程中的局部…',
         finished: false
       }]
     }
