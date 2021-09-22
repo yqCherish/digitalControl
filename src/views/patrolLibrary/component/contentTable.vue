@@ -35,35 +35,37 @@
         :width="category?240: 160"
       >
         <template slot-scope="scope">
-          <div class="display_between"><el-checkbox v-model="check1">不存在</el-checkbox><el-input v-model="value1" style="width: 84px;" /></div>
-          <div class="display_between"><el-checkbox v-model="check2">存在但不重要</el-checkbox><el-input v-model="value2" style="width: 84px;" /></div>
-          <div class="display_between"><el-checkbox v-model="check3">存在且比较严重</el-checkbox><el-input v-model="value3" style="width: 84px;" /></div>
-          <div class="display_between"><el-checkbox v-model="check4">存在且非常严重</el-checkbox><el-input v-model="value4" style="width: 84px;" /></div>
+          <div class="display_between"><el-checkbox v-model="check1">不存在</el-checkbox><el-input v-if="category" v-model="value1" style="width: 84px;" /></div>
+          <div class="display_between"><el-checkbox v-model="check2">存在但不重要</el-checkbox><el-input v-if="category" v-model="value2" style="width: 84px;" /></div>
+          <div class="display_between"><el-checkbox v-model="check3">存在且比较严重</el-checkbox><el-input v-if="category" v-model="value3" style="width: 84px;" /></div>
+          <div class="display_between"><el-checkbox v-model="check4">存在且非常严重</el-checkbox><el-input v-if="category" v-model="value4" style="width: 84px;" /></div>
         </template>
       </el-table-column>
       <el-table-column label="操作" width="200">
-        <template v-if="category" slot-scope="scope">
+        <template slot-scope="scope">
           <el-button
+            v-if="category"
             size="mini"
             icon="el-icon-document-checked"
             type="primary"
             plain
           >保存</el-button>
-        </template>
-        <template v-else slot-scope="scope">
           <el-button
+            v-if="!category"
             size="mini"
             icon="el-icon-edit-outline"
             type="primary"
             plain
           >编辑</el-button>
           <el-button
+            v-if="!category"
             size="mini"
             icon="el-icon-delete"
             type="danger"
             plain
           >保存</el-button>
         </template>
+
       </el-table-column>
     </el-table>
     <div class="pagination">

@@ -181,6 +181,7 @@ export default {
     async logoutConfirm() {
       await this.logout()
       this.$store.commit('menu/LOG_OUT_DIALOG', false)
+      this.$store.commit('menu/CLEAR_SECOND_MENU', false)
     },
     async logout() {
       await this.$store.dispatch('user/logout')

@@ -14,6 +14,7 @@ const getters = {
   secondMenus: state => state.menu.secondMenu,
   settingNavState: state => state.menu.setting_nav,
   psdState: state => state.menu.psd_dialog,
-  logoutState: state => state.menu.logout_dialog
+  logoutState: state => state.menu.logout_dialog,
+  identityState: state => state.user.identity
 }
 export default getters

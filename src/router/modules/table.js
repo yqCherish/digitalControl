@@ -12,40 +12,6 @@ const tableRouter = {
   },
   children: [
     {
-      path: 'key-manage',
-      component: () => import('@/views/supervise/parentContainer'),
-      name: 'DynamicTable',
-      title: '巡查指标库',
-      children: [{
-        path: 'key-manage-list',
-        name: 'keyManageList',
-        component: () => import('@/views/patrolLibrary/index'),
-        title: '指标管理列表'
-      }, {
-        path: 'problem-degree-set',
-        name: 'keyProblem',
-        component: () => import('@/views/patrolLibrary/index2'),
-        title: '指标问题程度配置'
-      }, {
-        path: 'key-score-set',
-        name: 'keyScoreSet',
-        component: () => import('@/views/patrolLibrary/index3'),
-        title: '指标分值配置'
-      }]
-    },
-    {
-      path: 'supervise-plan-manage',
-      component: () => import('@/views/supervise/parentContainer'),
-      name: 'planManage',
-      title: '巡查计划管理',
-      children: [{
-        path: 'plan-manage-list',
-        name: 'planManageList',
-        component: () => import('@/views/supervise/planManage/planList'),
-        title: '指标管理计划'
-      }]
-    },
-    {
       path: 'supervise-task-manage',
       component: () => import('@/views/supervise/parentContainer'),
       name: 'taskManage',
@@ -60,34 +26,6 @@ const tableRouter = {
         name: 'finishList',
         component: () => import('@/views/supervise/taskManage/finishedList/index'),
         title: '已结束任务'
-      }]
-    },
-    {
-      path: 'supervise-patrol-manage',
-      component: () => import('@/views/supervise/parentContainer'),
-      name: 'patrolResults',
-      title: '巡查结果管理',
-      children: [{
-        path: 'patrol-manage-list',
-        name: 'patrolResultsList',
-        component: () => import('@/views/supervise/patrolResults/resultList'),
-        title: '巡查结果管理'
-      }, {
-        path: 'patrolResultsList',
-        component: () => import('@/views/supervise/patrolResults/resultList'),
-        title: '统计分析'
-      }]
-    },
-    {
-      path: 'supervise-archives-manage',
-      component: () => import('@/views/supervise/parentContainer'),
-      name: 'patrolArchives',
-      title: '巡查档案管理',
-      children: [{
-        path: 'patrol-archives-list',
-        name: 'patrolArchivesList',
-        component: () => import('@/views/supervise/patrolArchives/archivesList'),
-        title: '巡查档案管理'
       }]
     },
     {

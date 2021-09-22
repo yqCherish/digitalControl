@@ -8,7 +8,10 @@ import Layout from '@/layout'
 
 /* Router Modules */
 import systemManageRouter from './modules/charts'
+import leader_admin from './modules/table_leader'
+import table_admin from './modules/table_admin'
 import tableRouter from './modules/table'
+import table_all from './modules/table_all'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -36,7 +39,7 @@ import tableRouter from './modules/table'
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
-export const constantRoutes = [
+export const all_routes = [
   {
     path: '/redirect',
     component: Layout,
@@ -50,7 +53,7 @@ export const constantRoutes = [
   },
   {
     path: '/login',
-    component: () => import('@/views/login/index'),
+    component: () => import('@/views/login/loginContainer'),
     hidden: true
   },
   {
@@ -82,19 +85,6 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/dashboard',
-    component: Layout,
-    // redirect: '/dashboard',
-    children: [
-      {
-        path: '/dashboard-1',
-        component: () => import('@/views/dashboard/component/dashboard2'),
-        name: 'Dashboard1',
-        meta: { title: '工作台（身份1）', icon: 'dashboard', affix: true }
-      }
-    ]
-  },
-  {
     path: '/profile',
     component: Layout,
     redirect: '/profile/index',
@@ -108,7 +98,7 @@ export const constantRoutes = [
       }
     ]
   },
-  tableRouter,
+  table_all,
   {
     path: '/talent-pool',
     component: Layout,
@@ -138,6 +128,258 @@ export const constantRoutes = [
   systemManageRouter
 ]
 
+export const constantRoutes_admin = [
+  {
+    path: '/redirect',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        component: () => import('@/views/redirect/index')
+      }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/login/loginContainer'),
+    hidden: true
+  },
+  {
+    path: '/auth-redirect',
+    component: () => import('@/views/login/auth-redirect'),
+    hidden: true
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/error-page/404'),
+    hidden: true
+  },
+  {
+    path: '/401',
+    component: () => import('@/views/error-page/401'),
+    hidden: true
+  },
+  {
+    path: '/',
+    component: Layout,
+    // redirect: '/dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/component/dashboard1'),
+        name: 'Dashboard',
+        meta: { title: '工作台', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/profile',
+    component: Layout,
+    redirect: '/profile/index',
+    hidden: true,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        name: 'Profile',
+        meta: { title: 'Profile', icon: 'user', noCache: true }
+      }
+    ]
+  },
+  table_admin,
+  {
+    path: '/talent-pool',
+    component: Layout,
+    redirect: 'noRedirect',
+    children: [
+      {
+        path: '404',
+        component: () => import('@/views/error-page/404'),
+        name: 'Page404',
+        meta: { title: '人才库管理', icon: 'el-icon-s-custom', noCache: true }
+      }
+    ]
+  },
+  {
+    path: '/intelligence-pool',
+    component: Layout,
+    redirect: 'noRedirect',
+    children: [
+      {
+        path: '404',
+        component: () => import('@/views/error-page/404'),
+        name: 'Page404',
+        meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
+      }
+    ]
+  },
+  systemManageRouter
+]
+
+export const constantRoutes_leader = [
+  {
+    path: '/redirect',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        component: () => import('@/views/redirect/index')
+      }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/login/loginContainer'),
+    hidden: true
+  },
+  {
+    path: '/auth-redirect',
+    component: () => import('@/views/login/auth-redirect'),
+    hidden: true
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/error-page/404'),
+    hidden: true
+  },
+  {
+    path: '/401',
+    component: () => import('@/views/error-page/401'),
+    hidden: true
+  },
+  {
+    path: '/',
+    component: Layout,
+    // redirect: '/dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/component/dashboard1'),
+        name: 'Dashboard',
+        meta: { title: '工作台', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/profile',
+    component: Layout,
+    redirect: '/profile/index',
+    hidden: true,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        name: 'Profile',
+        meta: { title: 'Profile', icon: 'user', noCache: true }
+      }
+    ]
+  },
+  leader_admin,
+  {
+    path: '/intelligence-pool',
+    component: Layout,
+    redirect: 'noRedirect',
+    children: [
+      {
+        path: '404',
+        component: () => import('@/views/error-page/404'),
+        name: 'Page404',
+        meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
+      }
+    ]
+  }
+]
+
+export const constantRoutes_user = [
+  {
+    path: '/redirect',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        component: () => import('@/views/redirect/index')
+      }
+    ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/login/loginContainer'),
+    hidden: true
+  },
+  {
+    path: '/auth-redirect',
+    component: () => import('@/views/login/auth-redirect'),
+    hidden: true
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/error-page/404'),
+    hidden: true
+  },
+  {
+    path: '/401',
+    component: () => import('@/views/error-page/401'),
+    hidden: true
+  },
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   // redirect: '/dashboard',
+  //   children: [
+  //     {
+  //       path: 'dashboard',
+  //       component: () => import('@/views/dashboard/component/dashboard1'),
+  //       name: 'Dashboard',
+  //       meta: { title: '工作台', icon: 'dashboard', affix: true }
+  //     }
+  //   ]
+  // },
+  {
+    path: '/dashboard',
+    component: Layout,
+    // redirect: '/dashboard',
+    children: [
+      {
+        path: '/dashboard-1',
+        component: () => import('@/views/dashboard/component/dashboard2'),
+        name: 'Dashboard1',
+        meta: { title: '工作台', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/profile',
+    component: Layout,
+    redirect: '/profile/index',
+    hidden: true,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        name: 'Profile',
+        meta: { title: 'Profile', icon: 'user', noCache: true }
+      }
+    ]
+  },
+  tableRouter,
+  {
+    path: '/intelligence-pool',
+    component: Layout,
+    redirect: 'noRedirect',
+    children: [
+      {
+        path: '404',
+        component: () => import('@/views/error-page/404'),
+        name: 'Page404',
+        meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
+      }
+    ]
+  }
+]
+
 /**
  * asyncRoutes
  * the routes that need to be dynamically loaded based on user roles
@@ -150,7 +392,7 @@ export const asyncRoutes = [
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
+  routes: all_routes
 })
 
 const router = createRouter()
