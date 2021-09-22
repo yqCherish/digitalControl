@@ -28,7 +28,7 @@ const mutations = {
     state.roles = roles
   },
   SET_IDENTITY: (state, identity) => {
-    state.identity = identity;
+    state.identity = identity
   }
 }
 

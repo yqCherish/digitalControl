@@ -377,7 +377,7 @@ export const constantRoutes_user = [
         meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
       }
     ]
-  },
+  }
 ]
 
 /**

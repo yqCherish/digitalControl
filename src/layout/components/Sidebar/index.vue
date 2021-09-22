@@ -23,7 +23,7 @@ import { mapGetters } from 'vuex'
 import Logo from './Logo'
 import SidebarItem from './SidebarItem'
 import variables from '@/styles/variables.scss'
-import { constantRoutes_admin, constantRoutes_leader, constantRoutes_user } from "@/router/index";
+import { constantRoutes_admin, constantRoutes_leader, constantRoutes_user } from '@/router/index'
 
 export default {
   components: { SidebarItem, Logo },
@@ -59,7 +59,7 @@ export default {
     }
   },
   created() {
-    this.routes = this.identityState === 1 ? constantRoutes_admin : this.identityState === 2 ? constantRoutes_leader : constantRoutes_user;
+    this.routes = this.identityState === 1 ? constantRoutes_admin : this.identityState === 2 ? constantRoutes_leader : constantRoutes_user
   }
 }
 </script>

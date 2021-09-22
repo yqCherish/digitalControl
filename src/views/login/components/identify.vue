@@ -1,13 +1,13 @@
 <template>
   <div class="s-canvas">
-    <canvas id="s-canvas" :width="contentWidth" :height="contentHeight"></canvas>
+    <canvas id="s-canvas" :width="contentWidth" :height="contentHeight" />
   </div>
 </template>
 <script>
-export default{
+export default {
   name: 'SIdentify',
   props: {
-    fresh:true,
+    fresh: true,
     fontSizeMin: {
       type: Number,
       default: 20
@@ -59,25 +59,30 @@ export default{
   },
   data() {
     return {
-      identifyCodes: "1234567890",
-      identifyCode: ""
-    };
+      identifyCodes: '1234567890',
+      identifyCode: ''
+    }
+  },
+  watch: {
+    fresh() { // 监听事件
+      this.makeCode(this.identifyCodes, 4)
+    }
   },
   methods: {
     // 生成一个随机数
-    randomNum (min, max) {
+    randomNum(min, max) {
       return Math.floor(Math.random() * (max - min) + min)
     },
     // 生成一个随机的颜色
-    randomColor (min, max) {
-      let r = this.randomNum(min, max)
-      let g = this.randomNum(min, max)
-      let b = this.randomNum(min, max)
+    randomColor(min, max) {
+      const r = this.randomNum(min, max)
+      const g = this.randomNum(min, max)
+      const b = this.randomNum(min, max)
       return 'rgb(' + r + ',' + g + ',' + b + ')'
     },
-    drawPic () {
-      let canvas = document.getElementById('s-canvas')
-      let ctx = canvas.getContext('2d')
+    drawPic() {
+      const canvas = document.getElementById('s-canvas')
+      const ctx = canvas.getContext('2d')
       ctx.textBaseline = 'bottom'
       // 绘制背景
       ctx.fillStyle = this.randomColor(this.backgroundColorMin, this.backgroundColorMax)
@@ -86,14 +91,14 @@ export default{
       for (let i = 0; i < this.identifyCode.length; i++) {
         this.drawText(ctx, this.identifyCode[i], i)
       }
-//    this.drawLine(ctx)
+      //    this.drawLine(ctx)
       this.drawDot(ctx)
     },
-    drawText (ctx, txt, i) {
+    drawText(ctx, txt, i) {
       ctx.fillStyle = this.randomColor(this.colorMin, this.colorMax)
       ctx.font = this.randomNum(this.fontSizeMin, this.fontSizeMax) + 'px SimHei'
-      let x = (i + 1) * (this.contentWidth / (this.identifyCode.length + 1))
-      let y = this.randomNum(this.fontSizeMax, this.contentHeight - 5)
+      const x = (i + 1) * (this.contentWidth / (this.identifyCode.length + 1))
+      const y = this.randomNum(this.fontSizeMax, this.contentHeight - 5)
       var deg = this.randomNum(-10, 10)
       // 修改坐标原点和旋转角度
       ctx.translate(x, y)
@@ -103,8 +108,8 @@ export default{
       ctx.rotate(-deg * Math.PI / 180)
       ctx.translate(-x, -y)
     },
-    drawLine (ctx) {
-//     绘制干扰线
+    drawLine(ctx) {
+      //     绘制干扰线
       for (let i = 0; i < 3; i++) {
         ctx.strokeStyle = this.randomColor(this.lineColorMin, this.lineColorMax)
         ctx.beginPath()
@@ -113,7 +118,7 @@ export default{
         ctx.stroke()
       }
     },
-    drawDot (ctx) {
+    drawDot(ctx) {
       // 绘制干扰点
       for (let i = 0; i < 30; i++) {
         ctx.fillStyle = this.randomColor(0, 255)
@@ -124,27 +129,20 @@ export default{
     },
     // 生成四位随机验证码
     makeCode(o, l) {
-      console.log("makeCode");
-      this.identifyCode="";
+      console.log('makeCode')
+      this.identifyCode = ''
       for (let i = 0; i < l; i++) {
         this.identifyCode += this.identifyCodes[
           this.randomNum(0, this.identifyCodes.length)
-          ];
+        ]
       }
 
-      //绘制图片
+      // 绘制图片
       this.drawPic()
 
-      //传值给父组件
-      this.$emit('makedCode',this.identifyCode);
-
-
+      // 传值给父组件
+      this.$emit('makedCode', this.identifyCode)
     }
-  },
-  watch: {
-    fresh () {   //监听事件
-      this.makeCode(this.identifyCodes, 4);
-    }
-  },
+  }
 }
 </script>

@@ -1,21 +1,21 @@
 <template>
   <div class="login-container">
     <div class="inner-container">
-      <img class="left-img" src="@/assets/img/bg@3x.jpg"/>
+      <img class="left-img" src="@/assets/img/bg@3x.jpg">
       <div class="login-content">
         <div class="top-title">登录</div>
         <div class="user-container">
-          <input ref="username" class="user-input" v-model="username" placeholder="请输入账号"/>
-          <i class="el-icon-user left-icon"></i>
+          <input ref="username" v-model="username" class="user-input" placeholder="请输入账号">
+          <i class="el-icon-user left-icon" />
         </div>
         <div class="psd-container">
-          <input ref="password" class="psd-input" type="password" v-model="password" placeholder="请输入密码"/>
-          <i class="el-icon-lock left-icon"></i>
+          <input ref="password" v-model="password" class="psd-input" type="password" placeholder="请输入密码">
+          <i class="el-icon-lock left-icon" />
         </div>
         <div class="verify-container">
-          <input class="verify-input" v-model="verify_code" placeholder="请输入验证码"/>
-          <i class="el-icon-s-check left-icon"/>
-          <identify :contentHeight="49" :fresh="flag" @makedCode="getMakedCode"></identify>
+          <input v-model="verify_code" class="verify-input" placeholder="请输入验证码">
+          <i class="el-icon-s-check left-icon" />
+          <identify :content-height="49" :fresh="flag" @makedCode="getMakedCode" />
         </div>
         <a class="login-btn" @click="handleLogin">登 录</a>
         <a class="forget">忘记密码？ </a>
@@ -25,20 +25,20 @@
 </template>
 
 <script>
-import identify from "@/views/login/components/identify";
+import identify from '@/views/login/components/identify'
 export default {
   components: {
     identify
   },
   data() {
     return {
-      username: "",
-      password: "",
-      verify_code: "",
+      username: '',
+      password: '',
+      verify_code: '',
       flag: true,
       redirect: undefined,
       otherQuery: {},
-      maked_code: ""
+      maked_code: ''
     }
   },
   watch: {
@@ -53,32 +53,35 @@ export default {
       immediate: true
     }
   },
+  mounted() {
+    this.flag = !this.flag
+  },
 
   methods: {
     getMakedCode(code) {
-      this.maked_code = code;
+      this.maked_code = code
     },
     handleLogin() {
       if (!this.username) {
-        this.$message.error('请输入用户名');
-        return;
+        this.$message.error('请输入用户名')
+        return
       }
       if (!this.password) {
-        this.$message.error('请输入密码');
-        return;
+        this.$message.error('请输入密码')
+        return
       }
       if (!this.verify_code) {
-        this.$message.error('请输入验证码');
-        return;
+        this.$message.error('请输入验证码')
+        return
       }
-      if (this.username === "admin") {
+      if (this.username === 'admin') {
         this.$store.commit('user/SET_IDENTITY', 1)
-      } else if (this.username === "leader") {
+      } else if (this.username === 'leader') {
         this.$store.commit('user/SET_IDENTITY', 2)
-      } else if(this.username === "user") {
+      } else if (this.username === 'user') {
         this.$store.commit('user/SET_IDENTITY', 3)
       }
-      this.$router.push({path: "/"})
+      this.$router.push({ path: '/' })
     },
     getOtherQuery(query) {
       return Object.keys(query).reduce((acc, cur) => {
@@ -88,10 +91,7 @@ export default {
         return acc
       }, {})
     }
-  },
-  mounted() {
-    this.flag = !this.flag;
-  },
+  }
 }
 </script>
 

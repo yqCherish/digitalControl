@@ -44,7 +44,7 @@ const tableRouter = {
         component: () => import('@/views/supervise/planManage/planList'),
         title: '指标管理计划'
       }]
-    },{
+    }, {
       path: 'supervise-task-manage',
       component: () => import('@/views/supervise/parentContainer'),
       name: 'taskManage',

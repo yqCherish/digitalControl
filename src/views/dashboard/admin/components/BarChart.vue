@@ -72,13 +72,13 @@ export default {
           },
           axisLine: {
             show: false
-          },
+          }
         }],
         yAxis: [{
           type: 'value',
           axisLine: {
             show: false
-          },
+          }
         }],
         series: [{
           name: 'pageA',
@@ -95,7 +95,7 @@ export default {
             emphasis: {
               barBorderRadius: 4
             }
-          },
+          }
         }]
       })
       this.category === 0 && this.chart.setOption({
@@ -166,7 +166,7 @@ export default {
               emphasis: {
                 barBorderRadius: 10
               }
-            },
+            }
           },
           {
             name: '存在但不严重',
@@ -185,7 +185,7 @@ export default {
               emphasis: {
                 barBorderRadius: 10
               }
-            },
+            }
           },
           {
             name: '存在且比较严重',
@@ -204,7 +204,7 @@ export default {
               emphasis: {
                 barBorderRadius: 10
               }
-            },
+            }
           },
           {
             name: '存在且非常严重',
@@ -223,7 +223,7 @@ export default {
               emphasis: {
                 barBorderRadius: 10
               }
-            },
+            }
           }
         ]
       })
