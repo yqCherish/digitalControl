@@ -210,6 +210,7 @@ export default {
       },
       drawer: false,
       title: '',
+      checked: false,
       dialogFormVisible: false
     }
   },

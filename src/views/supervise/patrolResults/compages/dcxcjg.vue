@@ -63,11 +63,11 @@
         <div class="flex-g-1 flex">
           <div>
             <div class="fon_12 color_9">督查整改届次</div>
-            <div class="fon_14 wei c3">十五届第三轮第一次</div>
+            <div class="fon_14 wei c3 mar_t10">十五届第三轮第一次</div>
           </div>
           <div class="mar_l50">
             <div class="fon_12 color_9">督查整改计划指标</div>
-            <div class="fon_14 wei c3">30个（总分100分）</div>
+            <div class="fon_14 wei c3 mar_t10">30个（总分100分）</div>
           </div>
         </div>
         <div class="flex-g-0">
@@ -165,7 +165,8 @@ export default {
   methods: {
     handleEdit(row) {
       this.$refs['edit2'].showEdit(row)
-    }
+    },
+    onSearch() {}
   }
 }
 </script>

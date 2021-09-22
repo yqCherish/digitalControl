@@ -161,7 +161,8 @@ export default {
           name4: '2020-07-08',
           name5: '领导组1个 执行组0个'
         }
-      ]
+      ],
+      currentPage4: 4
     }
   },
   computed: {},
@@ -180,6 +181,12 @@ export default {
     },
     xiangqing(row) {
       this.$refs['edit8'].showEdit(row)
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`)
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`)
     }
   }
 }
