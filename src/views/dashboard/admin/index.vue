@@ -36,6 +36,7 @@
         <box-card />
       </el-col>
     </el-row>
+
   </div>
 </template>
 
@@ -49,6 +50,8 @@ import BarChart from './components/BarChart'
 import TransactionTable from './components/TransactionTable'
 import TodoList from './components/TodoList'
 import BoxCard from './components/BoxCard'
+import {deleteRole} from "@/api/role";
+import {mapGetters} from "vuex";
 
 const lineChartData = {
   newVisitis: {
@@ -84,13 +87,13 @@ export default {
   },
   data() {
     return {
-      lineChartData: lineChartData.newVisitis
+      lineChartData: lineChartData.newVisitis,
     }
   },
   methods: {
     handleSetLineChartData(type) {
       this.lineChartData = lineChartData[type]
-    }
+    },
   }
 }
 </script>
@@ -119,5 +122,15 @@ export default {
   .chart-wrapper {
     padding: 8px;
   }
+}
+</style>
+<style>
+.drawer-navi .el-drawer__header {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #F0F0F0;
+}
+.drawer-navi .el-drawer__header span {
+  border: none
 }
 </style>

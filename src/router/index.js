@@ -75,103 +75,25 @@ export const constantRoutes = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/dashboard/component/dashboard1'),
         name: 'Dashboard',
         meta: { title: '工作台', icon: 'dashboard', affix: true }
       }
     ]
   },
   // {
-  //   path: '/error8',
+  //   path: '/dashboard',
   //   component: Layout,
-  //   redirect: 'noRedirect',
+  //   // redirect: '/dashboard',
   //   children: [
   //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '监督整改', icon: '404', noCache: true }
-  //     }
-  //   ]
-  // },{
-  //   path: '/error7',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '督查督办', icon: '404', affix: true }
-  //     }
-  //   ]
-  // },{
-  //   path: '/error6',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '报表上报', icon: '404', affix: true }
-  //     }
-  //   ]
-  // },{
-  //   path: '/error5',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '统计分析', icon: '404', affix: true }
-  //     }
-  //   ]
-  // },{
-  //   path: '/error4',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '人才库管理', icon: '404', affix: true }
-  //     }
-  //   ]
-  // },{
-  //   path: '/error3',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '智库管理', icon: '404', affix: true }
-  //     }
-  //   ]
-  // },{
-  //   path: '/error2',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '推送消息', icon: '404', affix: true }
-  //     }
-  //   ]
-  // },{
-  //   path: '/error1',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: '404',
-  //       component: () => import('@/views/error-page/404'),
-  //       name: 'Page404',
-  //       meta: { title: '系统消息', icon: '404', affix: true }
+  //       path: '/dashboard-1',
+  //       component: () => import('@/views/dashboard/component/dashboard1'),
+  //       name: 'Dashboard1',
+  //       meta: { title: '工作台（身份1）', icon: 'dashboard', affix: true }
   //     }
   //   ]
   // },
-  // superviseRouter,
   {
     path: '/profile',
     component: Layout,
@@ -201,7 +123,7 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/talent-pool',
+    path: '/intelligence-pool',
     component: Layout,
     redirect: 'noRedirect',
     children: [

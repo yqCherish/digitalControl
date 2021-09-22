@@ -1,0 +1,130 @@
+.section-container {
+  display: flex;
+  height: 100%;
+  padding: 16px;
+  flex-direction: column;
+  .left-container {
+    flex: 5;
+    .top-exist-task {
+      background: #FFFFFF;
+      box-shadow: 0px 10px 30px 0px rgba(209, 213, 223, 0.1);
+      border-radius: 4px;
+      padding: 10px;
+      margin: 16px 0 10px;
+      .top-exist-inner {
+        border-radius: 2px;
+        border: 1px solid #E7EBEF;
+        padding: 27px 0 35px;
+        .num {
+          font-size: 30px;
+          font-weight: 500;
+          color: #1D65EE;
+          line-height: 42px;
+          margin-bottom: 6px;
+        }
+        .text {
+          font-size: 14px;
+          font-weight: 500;
+          color: #111111;
+          line-height: 20px;
+        }
+      }
+    }
+    .left-center-table {
+      padding-top: 16px;
+      background: white;
+      .header-title-container {
+        padding: 0 24px 0 9px;
+        .title {
+          font-weight: 500;
+          color: #111111;
+          line-height: 20px;
+          font-size: 14px;
+          flex: 1;
+        }
+        .input {
+          width: 231px;
+          margin-right: 10px;
+        }
+      }
+      .table-container {
+        padding: 24px 10px 32px 16px;
+      }
+      .top-pie-container {
+
+      }
+    }
+  }
+  .right-container {
+    flex: 4;
+    padding-top: 16px;
+    margin-left: 10px;
+    .top-line-chart {
+      background: #FFFFFF;
+      box-shadow: 0px 10px 30px 0px rgba(209, 213, 223, 0.1);
+      border-radius: 4px;
+      .header-title-container {
+        padding: 16px 24px 0 9px;
+        .title {
+          font-weight: 500;
+          color: #111111;
+          line-height: 20px;
+          font-size: 14px;
+          flex: 1;
+        }
+        .input {
+          width: 231px;
+          margin-right: 10px;
+        }
+      }
+      .table-container {
+        padding: 20px 19px 16px;
+      }
+    }
+    .bottom-line-chart {
+      background: #FFFFFF;
+      box-shadow: 0px 10px 30px 0px rgba(209, 213, 223, 0.1);
+      border-radius: 4px;
+      margin-top: 10px;
+      .header-title-container {
+        padding: 16px 24px 0 9px;
+        .title {
+          font-weight: 500;
+          color: #111111;
+          line-height: 20px;
+          font-size: 14px;
+          flex: 1;
+        }
+        .input {
+          width: 231px;
+          margin-right: 10px;
+        }
+      }
+      .table-container {
+        padding: 10px 19px 16px;
+      }
+    }
+  }
+}
+
+.m-l-10 {
+  margin-left: 10px;
+}
+.display_col {
+  display: flex;
+  flex-direction: column;
+}
+.display_flex_center {
+  display: flex;
+  align-items: center;
+}
+.display_flex {
+  display: flex;
+}
+.chart-wrapper {
+  background: #fff;
+  padding: 16px 16px 0;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
