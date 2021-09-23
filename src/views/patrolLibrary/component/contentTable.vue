@@ -169,7 +169,7 @@ export default {
       value3: '',
       value4: '',
       dialog_1: false,
-      dialog_2: false,
+      dialog_2: false
     }
   }
 }

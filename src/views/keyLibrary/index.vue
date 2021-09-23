@@ -1,12 +1,12 @@
 <template>
   <div>
-    <img src="@/assets/img/keyLibrary.png" style="width: 100%;"/>
+    <img src="@/assets/img/keyLibrary.png" style="width: 100%;">
   </div>
 </template>
 
 <script>
 export default {
-  name: "index"
+  name: 'Index'
 }
 </script>
 

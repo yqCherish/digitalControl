@@ -206,10 +206,10 @@ export default {
   },
   methods: {
     _chooseTask(index) {
-      this.chooseTaskIndex = index;
+      this.chooseTaskIndex = index
       if (index === 2) {
         this.$router.push({
-          name: "taskManageList"
+          name: 'taskManageList'
         })
       }
     }

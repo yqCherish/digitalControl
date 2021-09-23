@@ -138,13 +138,13 @@ export default {
         address: '1',
         address1: '1',
         address2: '1'
-      }],
+      }]
     }
   },
   methods: {
     _linkToTask() {
       this.$router.push({
-        name: "patrolResultsList"
+        name: 'patrolResultsList'
       })
     }
   }

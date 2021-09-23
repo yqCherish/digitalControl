@@ -307,7 +307,7 @@ export const constantRoutes_leader = [
         meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
       }
     ]
-  },
+  }
 ]
 
 export const constantRoutes_user = [
@@ -396,7 +396,7 @@ export const constantRoutes_user = [
         meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
       }
     ]
-  },
+  }
 ]
 
 /**
@@ -408,7 +408,7 @@ export const asyncRoutes = [
   { path: '*', redirect: '/404', hidden: true }
 ]
 
-export const constantRoutes=[];
+export const constantRoutes = []
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support

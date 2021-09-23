@@ -75,8 +75,8 @@ export default {
   },
   methods: {
     toggleSideBar(status) {
-      this.$store.dispatch('app/toggleSideBar');
-      status && this.$store.commit('menu/CLEAR_SECOND_MENU');
+      this.$store.dispatch('app/toggleSideBar')
+      status && this.$store.commit('menu/CLEAR_SECOND_MENU')
     },
     async logout() {
       await this.$store.dispatch('user/logout')

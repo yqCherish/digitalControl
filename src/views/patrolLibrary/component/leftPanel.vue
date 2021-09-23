@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     toggleLeft(index) {
-      this.choose_procedure_index = this.choose_procedure_index === index ? -1 : index;
+      this.choose_procedure_index = this.choose_procedure_index === index ? -1 : index
     }
   }
 }
