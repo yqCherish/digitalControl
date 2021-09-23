@@ -1,7 +1,9 @@
 <template>
   <div class="login-container">
     <div class="inner-container">
-      <img class="left-img" src="@/assets/img/bg@3x.jpg">
+      <div class="left-img-box">
+        <img class="left-img" src="@/assets/img/bg.png">
+      </div>
       <div class="login-content">
         <div class="top-title">登录</div>
         <div class="user-container">
@@ -113,6 +115,10 @@ export default {
       margin-top: 10%;
       display: flex;
       align-items: center;
+      .left-img-box {
+        height: 479px;
+        width: 582px;
+      }
       .left-img {
         height: 479px;
       }
