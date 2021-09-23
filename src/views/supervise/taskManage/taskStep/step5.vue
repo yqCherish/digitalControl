@@ -116,7 +116,7 @@
                 <span>{{ ite }}</span>
                 <span v-if="index===0" class="condition-state">已审阅</span></div>
             </div>
-            <div class="handle font-title font-title-width-12">
+            <div class="handle font-text-2 font-title-width-12">
               <el-button icon="el-icon-tickets" type="primary" size="mini" plain round @click="drawer4=true">详情</el-button>
               <el-button style="margin-left: 0;margin-top: 5px" icon="el-icon-view" type="primary" size="mini" plain round @click="choose_pro === 0 ? drawer5=true : drawer6=true">审阅</el-button>
             </div>
@@ -124,88 +124,88 @@
         </template>
       </div>
     </div>
-    <div class="display_row_center margin-l-6" style="margin-top: 24px;">
-      <el-checkbox v-model="all_check" label="全选" @change="changeAll" />
-      <el-button style="margin-left: 16px;" size="medium" type="primary" @click="reset">重置</el-button>
-    </div>
-    <div class="tab5-title" style="margin-top: 11px;">编号</div>
-    <div class="display_row_center margin-l-6" style="margin-bottom: 16px;">
-      <el-checkbox v-model="checkbox.c1" label="序号" />
-    </div>
-    <div class="display_row_center margin-l-6">
-      <el-checkbox v-model="checkbox.c2" class="flex-1" label="机构形状区划" />
-      <el-checkbox v-model="checkbox.c3" class="flex-1" label="台账编号" />
-      <el-checkbox v-model="checkbox.c4" class="flex-1" label="问题线索编号" />
-      <el-checkbox v-model="checkbox.c5" class="flex-1" label="线索来源" />
-    </div>
-    <div class="tab5-title">问题线索信号</div>
-    <div class="display_row_center margin-l-6">
-      <el-checkbox v-model="checkbox.c6" class="flex-1" label="面上问好单位" />
-      <el-checkbox v-model="checkbox.c7" class="flex-1" label="内容摘要" />
-      <el-checkbox v-model="checkbox.c8" class="flex-1" label="发生时间" />
-      <el-checkbox v-model="checkbox.c9" class="flex-1" label="移交时间" />
-    </div>
-    <div class="tab5-title">问题线索分类</div>
-    <div class="display_row_center margin-l-6">
-      <el-checkbox v-model="checkbox.c10" class="flex-1" label="问题线索类别" />
-      <el-checkbox v-model="checkbox.c11" class="flex-1" label="问题线索子类" />
-      <el-checkbox v-model="checkbox.c12" class="flex-1" label="六个围绕类别" />
-      <el-checkbox v-model="checkbox.c13" class="flex-1" label="线索涉及辖区" />
-    </div>
-    <div class="display_row_center margin-l-6 margin-t-16">
-      <el-checkbox v-model="checkbox.c14" class="flex-1" label="八项规定类别" />
-      <el-checkbox v-model="checkbox.c15" class="flex-1" label="线索涉及领域" />
-      <el-checkbox v-model="checkbox.c16" class="flex-1" label="线索涉及详细领域" />
-      <el-checkbox v-model="checkbox.c17" class="flex-1" label="自定义类别" />
-    </div>
-    <div class="display_row_center margin-l-6 margin-t-16">
-      <el-checkbox v-model="checkbox.c18" class="flex-1" label="自定义子类" />
-    </div>
-    <div class="tab5-title">办理信息</div>
-    <div class="display_row_center margin-l-6">
-      <el-checkbox v-model="checkbox.c19" class="flex-1" label="自定义子类" />
-      <el-checkbox v-model="checkbox.c20" class="flex-1" label="深入了解情况说明" />
-      <el-checkbox v-model="checkbox.c21" class="flex-1" label="分类处理意见" />
-      <el-checkbox v-model="checkbox.c22" class="flex-1" label="移交单位" />
-    </div>
-    <div class="display_row_center margin-l-6 margin-t-16">
-      <el-checkbox v-model="checkbox.c23" class="flex-1" label="具体反馈意见" />
-      <el-checkbox v-model="checkbox.c24" class="flex-1" label="处理方式" />
-      <el-checkbox v-model="checkbox.c25" class="flex-1" label="处理结果" />
-      <el-checkbox v-model="checkbox.c26" class="flex-1" label="移交人" />
-    </div>
-    <div class="display_row_center margin-l-6 margin-t-16">
-      <el-checkbox v-model="checkbox.c27" class="flex-1" label="问题类型" />
-      <el-checkbox v-model="checkbox.c28" class="flex-1" label="问题概述" />
-      <el-checkbox style="visibility: hidden" class="flex-1" label="问题概述" />
-      <el-checkbox style="visibility: hidden" class="flex-1" label="问题概述" />
-    </div>
-    <div class="tab5-title">督办信息</div>
-    <div class="display_row_center margin-l-6">
-      <el-checkbox v-model="checkbox.c29" class="flex-1" label="办理回告限时（天）" />
-      <el-checkbox v-model="checkbox.c30" class="flex-1" label="是否办结" />
-      <el-checkbox v-model="checkbox.c31" class="flex-1" label="具体办理情况" />
-      <el-checkbox v-model="checkbox.c32" class="flex-1" label="涉密等级" />
-    </div>
-    <div class="display_row_center margin-l-6 margin-t-16">
-      <el-checkbox v-model="checkbox.c33" class="flex-1" label="备注" />
-    </div>
-    <div class="tab5-title">整改情况</div>
-    <div class="display_row_center margin-l-6">
-      <el-checkbox v-model="checkbox.c34" class="flex-1" label="具体整改措施（项）" />
-      <el-checkbox v-model="checkbox.c35" class="flex-1" label="完善制度（项）" />
-      <el-checkbox v-model="checkbox.c36" class="flex-1" label="挽回损失（万）" />
-      <el-checkbox v-model="checkbox.c37" class="flex-1" label="完成情况" />
-    </div>
-    <div class="display_row_center margin-l-6 margin-t-16">
-      <el-checkbox v-model="checkbox.c38" class="flex-1" label="追责问责（人）" />
-      <el-checkbox v-model="checkbox.c39" class="flex-1" label="追责问责（单位）" />
-      <el-checkbox v-model="checkbox.c40" class="flex-1" label="其他" />
-      <el-checkbox v-model="checkbox.c41" class="flex-1" label="说明" />
-    </div>
-    <div class="display_row_center margin-l-6 margin-t-16">
-      <el-checkbox v-model="checkbox.c42" class="flex-1" label="其他成果" />
-    </div>
+    <!--    <div class="display_row_center margin-l-6" style="margin-top: 24px;">-->
+    <!--      <el-checkbox v-model="all_check" label="全选" @change="changeAll" />-->
+    <!--      <el-button style="margin-left: 16px;" size="medium" type="primary" @click="reset">重置</el-button>-->
+    <!--    </div>-->
+    <!--    <div class="tab5-title" style="margin-top: 11px;">编号</div>-->
+    <!--    <div class="display_row_center margin-l-6" style="margin-bottom: 16px;">-->
+    <!--      <el-checkbox v-model="checkbox.c1" label="序号" />-->
+    <!--    </div>-->
+    <!--    <div class="display_row_center margin-l-6">-->
+    <!--      <el-checkbox v-model="checkbox.c2" class="flex-1" label="机构形状区划" />-->
+    <!--      <el-checkbox v-model="checkbox.c3" class="flex-1" label="台账编号" />-->
+    <!--      <el-checkbox v-model="checkbox.c4" class="flex-1" label="问题线索编号" />-->
+    <!--      <el-checkbox v-model="checkbox.c5" class="flex-1" label="线索来源" />-->
+    <!--    </div>-->
+    <!--    <div class="tab5-title">问题线索信号</div>-->
+    <!--    <div class="display_row_center margin-l-6">-->
+    <!--      <el-checkbox v-model="checkbox.c6" class="flex-1" label="面上问好单位" />-->
+    <!--      <el-checkbox v-model="checkbox.c7" class="flex-1" label="内容摘要" />-->
+    <!--      <el-checkbox v-model="checkbox.c8" class="flex-1" label="发生时间" />-->
+    <!--      <el-checkbox v-model="checkbox.c9" class="flex-1" label="移交时间" />-->
+    <!--    </div>-->
+    <!--    <div class="tab5-title">问题线索分类</div>-->
+    <!--    <div class="display_row_center margin-l-6">-->
+    <!--      <el-checkbox v-model="checkbox.c10" class="flex-1" label="问题线索类别" />-->
+    <!--      <el-checkbox v-model="checkbox.c11" class="flex-1" label="问题线索子类" />-->
+    <!--      <el-checkbox v-model="checkbox.c12" class="flex-1" label="六个围绕类别" />-->
+    <!--      <el-checkbox v-model="checkbox.c13" class="flex-1" label="线索涉及辖区" />-->
+    <!--    </div>-->
+    <!--    <div class="display_row_center margin-l-6 margin-t-16">-->
+    <!--      <el-checkbox v-model="checkbox.c14" class="flex-1" label="八项规定类别" />-->
+    <!--      <el-checkbox v-model="checkbox.c15" class="flex-1" label="线索涉及领域" />-->
+    <!--      <el-checkbox v-model="checkbox.c16" class="flex-1" label="线索涉及详细领域" />-->
+    <!--      <el-checkbox v-model="checkbox.c17" class="flex-1" label="自定义类别" />-->
+    <!--    </div>-->
+    <!--    <div class="display_row_center margin-l-6 margin-t-16">-->
+    <!--      <el-checkbox v-model="checkbox.c18" class="flex-1" label="自定义子类" />-->
+    <!--    </div>-->
+    <!--    <div class="tab5-title">办理信息</div>-->
+    <!--    <div class="display_row_center margin-l-6">-->
+    <!--      <el-checkbox v-model="checkbox.c19" class="flex-1" label="自定义子类" />-->
+    <!--      <el-checkbox v-model="checkbox.c20" class="flex-1" label="深入了解情况说明" />-->
+    <!--      <el-checkbox v-model="checkbox.c21" class="flex-1" label="分类处理意见" />-->
+    <!--      <el-checkbox v-model="checkbox.c22" class="flex-1" label="移交单位" />-->
+    <!--    </div>-->
+    <!--    <div class="display_row_center margin-l-6 margin-t-16">-->
+    <!--      <el-checkbox v-model="checkbox.c23" class="flex-1" label="具体反馈意见" />-->
+    <!--      <el-checkbox v-model="checkbox.c24" class="flex-1" label="处理方式" />-->
+    <!--      <el-checkbox v-model="checkbox.c25" class="flex-1" label="处理结果" />-->
+    <!--      <el-checkbox v-model="checkbox.c26" class="flex-1" label="移交人" />-->
+    <!--    </div>-->
+    <!--    <div class="display_row_center margin-l-6 margin-t-16">-->
+    <!--      <el-checkbox v-model="checkbox.c27" class="flex-1" label="问题类型" />-->
+    <!--      <el-checkbox v-model="checkbox.c28" class="flex-1" label="问题概述" />-->
+    <!--      <el-checkbox style="visibility: hidden" class="flex-1" label="问题概述" />-->
+    <!--      <el-checkbox style="visibility: hidden" class="flex-1" label="问题概述" />-->
+    <!--    </div>-->
+    <!--    <div class="tab5-title">督办信息</div>-->
+    <!--    <div class="display_row_center margin-l-6">-->
+    <!--      <el-checkbox v-model="checkbox.c29" class="flex-1" label="办理回告限时（天）" />-->
+    <!--      <el-checkbox v-model="checkbox.c30" class="flex-1" label="是否办结" />-->
+    <!--      <el-checkbox v-model="checkbox.c31" class="flex-1" label="具体办理情况" />-->
+    <!--      <el-checkbox v-model="checkbox.c32" class="flex-1" label="涉密等级" />-->
+    <!--    </div>-->
+    <!--    <div class="display_row_center margin-l-6 margin-t-16">-->
+    <!--      <el-checkbox v-model="checkbox.c33" class="flex-1" label="备注" />-->
+    <!--    </div>-->
+    <!--    <div class="tab5-title">整改情况</div>-->
+    <!--    <div class="display_row_center margin-l-6">-->
+    <!--      <el-checkbox v-model="checkbox.c34" class="flex-1" label="具体整改措施（项）" />-->
+    <!--      <el-checkbox v-model="checkbox.c35" class="flex-1" label="完善制度（项）" />-->
+    <!--      <el-checkbox v-model="checkbox.c36" class="flex-1" label="挽回损失（万）" />-->
+    <!--      <el-checkbox v-model="checkbox.c37" class="flex-1" label="完成情况" />-->
+    <!--    </div>-->
+    <!--    <div class="display_row_center margin-l-6 margin-t-16">-->
+    <!--      <el-checkbox v-model="checkbox.c38" class="flex-1" label="追责问责（人）" />-->
+    <!--      <el-checkbox v-model="checkbox.c39" class="flex-1" label="追责问责（单位）" />-->
+    <!--      <el-checkbox v-model="checkbox.c40" class="flex-1" label="其他" />-->
+    <!--      <el-checkbox v-model="checkbox.c41" class="flex-1" label="说明" />-->
+    <!--    </div>-->
+    <!--    <div class="display_row_center margin-l-6 margin-t-16">-->
+    <!--      <el-checkbox v-model="checkbox.c42" class="flex-1" label="其他成果" />-->
+    <!--    </div>-->
     <el-drawer
       title="审阅意见"
       :visible.sync="drawer1"

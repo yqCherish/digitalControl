@@ -4,7 +4,7 @@
       <div class="title">{{ !category ? "巡查内容/重点" : "巡查内容/重点（共30.50/分）" }}</div>
       <el-button icon="el-icon-plus" type="primary">添加内容</el-button>
     </div>
-    <div v-for="(item, index) in procedure" class="list-item" :class="{'active': choose_procedure_index===index}" @click="choose_procedure_index = index">
+    <div v-for="(item, index) in procedure" class="list-item" :class="{'active': choose_procedure_index===index}" @click="toggleLeft(index)">
       <div class="toggle-container">
         <img class="left-icon" src="@/assets/img/supervise/taskManage/black_fold.png">
         <div class="text">{{ item }}</div>
@@ -71,6 +71,11 @@ export default {
       choose_procedure_index: 0,
       dialog_1: false,
       dialog_2: false
+    }
+  },
+  methods: {
+    toggleLeft(index) {
+      this.choose_procedure_index = this.choose_procedure_index === index ? -1 : index
     }
   }
 }

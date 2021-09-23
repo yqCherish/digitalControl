@@ -74,12 +74,25 @@ export const all_routes = [
   {
     path: '/',
     component: Layout,
-    // redirect: '/dashboard',
+    redirect: '/dashboard',
     children: [
       {
         path: 'dashboard',
         component: () => import('@/views/dashboard/component/dashboard1'),
         name: 'Dashboard',
+        meta: { title: '工作台', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/dashboard-user',
+    component: Layout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: '/dashboard-user',
+        component: () => import('@/views/dashboard/component/dashboard2'),
+        name: 'DashboardUser',
         meta: { title: '工作台', icon: 'dashboard', affix: true }
       }
     ]
@@ -103,11 +116,12 @@ export const all_routes = [
     path: '/talent-pool',
     component: Layout,
     redirect: 'noRedirect',
+    name: 'talentPool',
     children: [
       {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
+        path: '/talent-pool',
+        component: () => import('@/views/talentPool/index'),
+        name: 'talentPool',
         meta: { title: '人才库管理', icon: 'el-icon-s-custom', noCache: true }
       }
     ]
@@ -116,11 +130,12 @@ export const all_routes = [
     path: '/intelligence-pool',
     component: Layout,
     redirect: 'noRedirect',
+    name: 'keyLibrary',
     children: [
       {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
+        path: '/intelligence-pool',
+        component: () => import('@/views/keyLibrary/index'),
+        name: 'keyLibrary',
         meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
       }
     ]
@@ -163,7 +178,7 @@ export const constantRoutes_admin = [
   {
     path: '/',
     component: Layout,
-    // redirect: '/dashboard',
+    redirect: '/dashboard',
     children: [
       {
         path: 'dashboard',
@@ -192,11 +207,12 @@ export const constantRoutes_admin = [
     path: '/talent-pool',
     component: Layout,
     redirect: 'noRedirect',
+    name: 'talentPool',
     children: [
       {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
+        path: '/talent-pool',
+        component: () => import('@/views/talentPool/index'),
+        name: 'talentPool',
         meta: { title: '人才库管理', icon: 'el-icon-s-custom', noCache: true }
       }
     ]
@@ -205,11 +221,12 @@ export const constantRoutes_admin = [
     path: '/intelligence-pool',
     component: Layout,
     redirect: 'noRedirect',
+    name: 'keyLibrary',
     children: [
       {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
+        path: '/intelligence-pool',
+        component: () => import('@/views/keyLibrary/index'),
+        name: 'keyLibrary',
         meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
       }
     ]
@@ -252,7 +269,7 @@ export const constantRoutes_leader = [
   {
     path: '/',
     component: Layout,
-    // redirect: '/dashboard',
+    redirect: '/dashboard',
     children: [
       {
         path: 'dashboard',
@@ -281,11 +298,12 @@ export const constantRoutes_leader = [
     path: '/intelligence-pool',
     component: Layout,
     redirect: 'noRedirect',
+    name: 'keyLibrary',
     children: [
       {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
+        path: '/intelligence-pool',
+        component: () => import('@/views/keyLibrary/index'),
+        name: 'keyLibrary',
         meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
       }
     ]
@@ -338,14 +356,14 @@ export const constantRoutes_user = [
   //   ]
   // },
   {
-    path: '/dashboard',
+    path: '/',
     component: Layout,
-    // redirect: '/dashboard',
+    redirect: '/dashboard',
     children: [
       {
-        path: '/dashboard-1',
+        path: 'dashboard',
         component: () => import('@/views/dashboard/component/dashboard2'),
-        name: 'Dashboard1',
+        name: 'Dashboard',
         meta: { title: '工作台', icon: 'dashboard', affix: true }
       }
     ]
@@ -369,11 +387,12 @@ export const constantRoutes_user = [
     path: '/intelligence-pool',
     component: Layout,
     redirect: 'noRedirect',
+    name: 'keyLibrary',
     children: [
       {
-        path: '404',
-        component: () => import('@/views/error-page/404'),
-        name: 'Page404',
+        path: '/intelligence-pool',
+        component: () => import('@/views/keyLibrary/index'),
+        name: 'keyLibrary',
         meta: { title: '智库管理', icon: 'el-icon-thumb', noCache: true }
       }
     ]
@@ -388,6 +407,8 @@ export const asyncRoutes = [
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
+
+export const constantRoutes = []
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support

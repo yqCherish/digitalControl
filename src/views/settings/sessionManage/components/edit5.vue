@@ -307,7 +307,7 @@
                   <div class="flex wid mar_l30">
                     <div>
                       <el-checkbox
-                        v-model="checked"
+                        v-model="checked1"
                       >贵州省萨股份有限公司
                       </el-checkbox>
                     </div>
@@ -370,49 +370,49 @@
                         <div class="mar_l20" style="line-height: 30px">
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked2"
                               style="width: 50px"
                             >张三
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked3"
                               style="width: 50px"
                             >李四
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked4"
                               style="width: 50px"
                             >王五
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked5"
                               style="width: 50px"
                             >张三
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked6"
                               style="width: 50px"
                             >李四
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked7"
                               style="width: 50px"
                             >王五
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked8"
                               style="width: 50px"
                             >王五
                             </el-checkbox>
@@ -459,51 +459,51 @@
                       <div class="xzcon pad_20">
                         <div style="line-height: 30px">
                           <el-checkbox
-                            v-model="checked"
+                            v-model="checked9"
                           >贵阳火炬软件园管理有限公司
                           </el-checkbox>
                         </div>
                         <div class="mar_l20" style="line-height: 30px">
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked10"
                             >创新发展事业部
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked11"
                             >网格安全事业部
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked12"
                             >融合发展事业部
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked13"
                             >投资发展事业部
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked14"
                             >云和基础服务事业部
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked15"
                               style="width: 100px"
                             >人力资源中心
                             </el-checkbox>
                           </div>
                           <div>
                             <el-checkbox
-                              v-model="checked"
+                              v-model="checked16"
                               style="width: 80px"
                             >风控中心
                             </el-checkbox>
@@ -530,7 +530,7 @@
                   <div class="flex wid mar_l30">
                     <div>
                       <el-checkbox
-                        v-model="checked"
+                        v-model="checked17"
                       >贵阳火炬软件园管理有限公司
                       </el-checkbox>
                     </div>
@@ -584,7 +584,7 @@
                         已选择对象（已选<span class="subjectcolor">2</span>人）
                       </div>
                       <div class="mar_l10">
-                        <el-checkbox v-model="checked">全选 </el-checkbox>
+                        <el-checkbox v-model="checked18">全选 </el-checkbox>
                       </div>
                     </div>
                     <div class="flex-x-bottom">
@@ -637,6 +637,24 @@ export default {
       time: '第一次',
       step: 1,
       checked: true,
+      checked1: true,
+      checked2: true,
+      checked3: true,
+      checked4: true,
+      checked5: true,
+      checked6: true,
+      checked7: true,
+      checked8: true,
+      checked9: true,
+      checked10: true,
+      checked11: true,
+      checked12: true,
+      checked13: true,
+      checked14: true,
+      checked15: true,
+      checked16: true,
+      checked17: true,
+      checked18: true,
       xzzxz: false,
       xzddfzr: false
     }

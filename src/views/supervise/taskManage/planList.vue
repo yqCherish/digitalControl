@@ -78,7 +78,7 @@
                 <el-input class="large-input" value="贵州省贵阳市大数据产业集团有限公司第 十五届 监督巡查第三轮 第一次监督整改工作" />
               </div>
               <div class="row-line">
-                <label>所属层次：</label>
+                <label>任务状态：</label>
                 <el-input v-model="value1" placeholder="待填报" class="large-input" />
               </div>
               <div class="row-line">

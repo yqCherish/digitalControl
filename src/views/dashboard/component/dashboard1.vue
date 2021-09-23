@@ -22,7 +22,7 @@
     <div class="display_flex">
       <div class="left-container display_col">
         <div class="top-exist-task">
-          <div class="top-exist-inner display_col" style="justify-content: center;align-items: center;">
+          <div class="top-exist-inner display_col" style="justify-content: center;align-items: center;cursor: pointer" @click="_linkToTask">
             <div class="num">10</div>
             <div class="text">待审核督查整改任务</div>
           </div>
@@ -139,6 +139,13 @@ export default {
         address1: '1',
         address2: '1'
       }]
+    }
+  },
+  methods: {
+    _linkToTask() {
+      this.$router.push({
+        name: 'patrolResultsList'
+      })
     }
   }
 }
