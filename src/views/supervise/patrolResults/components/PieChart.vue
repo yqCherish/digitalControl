@@ -108,9 +108,14 @@ export default {
           right: 10,
           bottom: 60,
           data: this.chartDataList[this.category].class
+        } : this.category === 0 ? {
+          orient: 'vertical',
+          right: 0,
+          bottom: 60,
+          data: this.chartDataList[this.category].class
         } : this.category < 4 ? {
           orient: 'vertical',
-          right: 10,
+          right: 50,
           bottom: 60,
           data: this.chartDataList[this.category].class
         } : {

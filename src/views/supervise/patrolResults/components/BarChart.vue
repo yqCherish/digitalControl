@@ -89,6 +89,45 @@ export default {
           }
         }]
       })
+      this.category === 3 && this.chart.setOption({
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            type: 'line' // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        grid: {
+          top: 10,
+          left: '2%',
+          right: '2%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [{
+          type: 'category',
+          data: ['重点1', '重点2', '重点3', '重点4', '重点5', '重点6'],
+          axisTick: {
+            alignWithLabel: true
+          }
+        }],
+        yAxis: [{
+          type: 'value',
+          axisLine: {
+            show: false
+          }
+        }],
+        series: [{
+          name: 'pageA',
+          type: 'bar',
+          stack: 'vistors',
+          barWidth: '30%',
+          data: [29, 52, 40, 64, 70, 88, 50],
+          animationDuration,
+          itemStyle: {
+            color: '#3F81FF'
+          }
+        }]
+      })
       this.category === 0 && this.chart.setOption({
         title: {
           text: '问题数量',

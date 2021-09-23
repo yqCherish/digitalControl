@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="flex-g-0">
-          <el-button type="primary" size="medium">督查整改结果统计分</el-button>
+          <el-button type="primary" size="medium" @click="dcjgtjf">督查整改结果统计分</el-button>
         </div>
       </div>
     </div>
@@ -103,13 +103,15 @@
       </el-table-column>
     </el-table>
     <edit2 ref="edit2" />
+    <edit3 ref="edit3" />
   </div>
 </template>
 
 <script>
 import Edit2 from '@/views/supervise/patrolResults/components/edit2'
+import Edit3 from '@/views/supervise/patrolResults/components/edit3'
 export default {
-  components: { Edit2 },
+  components: { Edit2, Edit3 },
   data() {
     return {
       formInline: {
@@ -166,7 +168,10 @@ export default {
     handleEdit(row) {
       this.$refs['edit2'].showEdit(row)
     },
-    onSearch() {}
+    onSearch() {},
+    dcjgtjf() {
+      this.$refs['edit3'].showEdit(1)
+    }
   }
 }
 </script>
