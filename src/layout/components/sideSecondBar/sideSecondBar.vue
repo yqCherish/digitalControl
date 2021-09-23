@@ -32,6 +32,7 @@ export default {
         name
       })
       this.$store.commit('app/TOGGLE_SIDEBAR')
+      this.$store.commit('menu/CLEAR_SECOND_MENU')
     }
   }
 }

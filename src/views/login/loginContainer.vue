@@ -78,12 +78,14 @@ export default {
       }
       if (this.username === 'admin') {
         this.$store.commit('user/SET_IDENTITY', 1)
+        this.$router.push({ path: '/' })
       } else if (this.username === 'leader') {
         this.$store.commit('user/SET_IDENTITY', 2)
+        this.$router.push({ path: '/' })
       } else if (this.username === 'user') {
         this.$store.commit('user/SET_IDENTITY', 3)
+        this.$router.push({ name: 'DashboardUser' })
       }
-      this.$router.push({ path: '/' })
     },
     getOtherQuery(query) {
       return Object.keys(query).reduce((acc, cur) => {

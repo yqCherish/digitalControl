@@ -158,16 +158,16 @@
     font-size: 14px;
     text-align: center;
     &.font-title-width-0 {
-      width: 25px;
+      width: 35px;
     }
     &.font-title-width-1 {
-      width: 64px;
+      width: 62px;
     }
     &.font-title-width-2 {
-      width: 88px;
+      width: 86px;
     }
     &.font-title-width-3 {
-      width: 64px;
+      width: 62px;
     }
     &.font-title-width-4 {
       width: 87px;
@@ -191,10 +191,12 @@
       width: 60px;
     }
     &.font-title-width-11 {
+      text-align: left;
       width: 127px;
     }
     &.font-title-width-12 {
       width: 68px;
+      padding-left: 0;
     }
   }
   .font-text {
@@ -217,16 +219,16 @@
     word-wrap: break-word;
     text-align: center;
     &.font-title-width-0 {
-      width: 25px;
+      width: 35px;
     }
     &.font-title-width-1 {
-      width: 64px;
+      width: 62px;
     }
     &.font-title-width-2 {
-      width: 68px;
+      width: 86px;
     }
     &.font-title-width-3 {
-      width: 64px;
+      width: 62px;
     }
     &.font-title-width-4 {
       width: 87px;
@@ -254,6 +256,7 @@
     }
     &.font-title-width-12 {
       width: 68px;
+      padding-left: 0;
     }
     .condition-state {
       margin-left: 12px;

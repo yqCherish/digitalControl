@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <!--    <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />-->
-    <div class="toggle-icon" :is-active="sidebar.opened" @click="toggleSideBar">
+    <div class="toggle-icon" :is-active="sidebar.opened" @click="toggleSideBar(sidebar.opened)">
       <img src="@/assets/img/more@3x.png">
     </div>
     <!--    <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />-->
@@ -74,8 +74,9 @@ export default {
     ])
   },
   methods: {
-    toggleSideBar() {
-      this.$store.dispatch('app/toggleSideBar')
+    toggleSideBar(status) {
+      this.$store.dispatch('app/toggleSideBar');
+      status && this.$store.commit('menu/CLEAR_SECOND_MENU');
     },
     async logout() {
       await this.$store.dispatch('user/logout')

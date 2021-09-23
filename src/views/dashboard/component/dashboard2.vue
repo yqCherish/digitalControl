@@ -38,7 +38,7 @@
             <div class="title">待办事项统计</div>
           </div>
           <div class="task-inner-container display_flex_center">
-            <div v-for="(item, index) in taskList" :key="item.name" class="task-item" :class="{'active': chooseTaskIndex===index}" @click="chooseTaskIndex=index">
+            <div v-for="(item, index) in taskList" :key="item.name" class="task-item" :class="{'active': chooseTaskIndex===index}" @click="_chooseTask(index)">
               <div class="num">{{ item.num }}</div>
               <div class="text">{{ item.name }}</div>
             </div>
@@ -202,6 +202,16 @@ export default {
         address1: '1',
         address2: '1'
       }]
+    }
+  },
+  methods: {
+    _chooseTask(index) {
+      this.chooseTaskIndex = index;
+      if (index === 2) {
+        this.$router.push({
+          name: "taskManageList"
+        })
+      }
     }
   }
 }
