@@ -55,6 +55,7 @@
             size="mini"
             icon="el-icon-edit-outline"
             type="primary"
+            @click="dialog_3=true"
             plain
           >编辑</el-button>
           <el-button
@@ -100,6 +101,57 @@
         <el-button class="btn" type="primary" @click="dialog_2=false;dialog_1=true">确认</el-button>
       </span>
     </el-dialog>
+    <el-drawer
+      title="指标细则信息详情"
+      :visible.sync="dialog_3"
+      direction="rtl"
+    >
+      <div style="padding: 10px 24px 10px 23px;">
+        <div class="display_row">
+          <label class="panel-label" style="width: 142px;text-align: right"><span class="mark">*</span>内容：</label>
+          <el-input
+            v-model="input_value_1"
+            style="width: 100%;margin-left: 10px;"
+            placeholder="请选择内容"
+          />
+        </div>
+        <div class="display_row m_t_24">
+          <label class="panel-label" style="width: 142px;text-align: right"><span class="mark">*</span>重点：</label>
+          <el-input
+            v-model="input_value_2"
+            style="width: 100%;margin-left: 10px;"
+            placeholder="请选择重点"
+          />
+        </div>
+        <div class="display_row m_t_24">
+          <label class="panel-label" style="width: 142px;text-align: right"><span class="mark">*</span>指标细则名称：</label>
+          <el-input
+            v-model="textarea2"
+            style="width: 100%;margin-left: 10px;"
+            type="textarea"
+            class="textarea"
+            :autosize="{ minRows: 6, maxRows: 8}"
+            placeholder="请输入事项名称（限500字符）"
+          />
+        </div>
+        <div class="display_row m_t_24">
+          <label class="panel-label" style="width: 142px;text-align: right"><span class="mark">*</span>指标说明：</label>
+          <el-input
+            v-model="textarea3"
+            style="width: 100%;margin-left: 10px;"
+            type="textarea"
+            class="textarea"
+            :autosize="{ minRows: 6, maxRows: 8}"
+          />
+        </div>
+        <div class="display_row" style="margin-top: 20px;">
+          <label class="panel-label" style="width: 142px;text-align: right"><span class="mark">*</span>审阅详情：</label>
+          <div class="display_row" style="flex-wrap: wrap;margin-left: 10px;">
+            <div v-for="(item, index) in smList" class="choose-button m-r-16" :class="{'active': smIndex===index}" @click="smIndex=index">{{ item }}</div>
+          </div>
+        </div>
+      </div>
+    </el-drawer>
   </div>
 </template>
 
@@ -169,7 +221,14 @@ export default {
       value3: '',
       value4: '',
       dialog_1: false,
-      dialog_2: false
+      dialog_2: false,
+      dialog_3: false,
+      input_value_1: '',
+      input_value_2: '',
+      textarea2: '',
+      textarea3: '',
+      smList: ['不存在', '存在但不重要', '存在且比较严重', '存在且非常严重'],
+      smIndex: 0
     }
   }
 }
@@ -210,5 +269,42 @@ export default {
       justify-content: space-between;
       margin-top:10px;
     }
+  }
+  .display_row {
+    display: flex;
+  }
+  .panel-label {
+    font-weight: 400;
+    color: #111111;
+    line-height: 30px;
+    font-size: 12px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .m_t_24 {
+    margin-top: 24px;
+  }
+  .mark {
+    color: #FA3939;
+    margin-right: 7px;
+    font-size: 16px;
+    vertical-align: middle;
+  }
+  .choose-button {
+    padding: 5px 17px;
+    font-weight: 400;
+    color: #595959;
+    font-size: 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin-bottom: 24px;
+    cursor: pointer;
+    &.active {
+      border: 1px solid #1D65EE;
+      color: #1D65EE;
+    }
+  }
+  .m-r-16 {
+    margin-right: 16px;
   }
 </style>
