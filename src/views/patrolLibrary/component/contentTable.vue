@@ -55,8 +55,8 @@
             size="mini"
             icon="el-icon-edit-outline"
             type="primary"
-            @click="dialog_3=true"
             plain
+            @click="dialog_3=true"
           >编辑</el-button>
           <el-button
             v-if="!category"

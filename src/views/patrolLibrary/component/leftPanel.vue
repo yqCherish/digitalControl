@@ -70,10 +70,10 @@
             <el-button type="primary">确认添加</el-button>
           </div>
         </div>
-        <el-divider></el-divider>
+        <el-divider />
         <div class="panel-label-2" style="margin-bottom: 6px;">已添加重点</div>
-        <div class="exist-item" v-for="item in existList">
-          <div class="content">{{item}}</div>
+        <div v-for="item in existList" class="exist-item">
+          <div class="content">{{ item }}</div>
           <a class="exist-item-btn edit" @click="dialog_5=true">编辑</a>
           <a class="exist-item-btn del">删除</a>
         </div>
@@ -97,7 +97,7 @@
           />
           <div style="display: flex;align-items: center;justify-content: center;margin-top: 40px;padding: 0 8px;">
             <el-button style="flex:1;" @click="dialog_5=false">取消</el-button>
-            <el-button style="flex:1;" @click="dialog_5=false" type="primary">确认</el-button>
+            <el-button style="flex:1;" type="primary" @click="dialog_5=false">确认</el-button>
           </div>
         </div>
 
@@ -141,7 +141,7 @@ export default {
         '学习贯彻习近平新时代中国特色社会主义思想和党的十九大及十九届中央历次全会精神，班子成员对“四个意识”四个自信，两个维护等未落实到具体工作当中。',
         '坚持“两个维护”， 建设风清气正的政治 生态，增强党员的党 性观念。',
         '坚持“两个维护”， 建设风清气正的政治 生态，增强党员的党 性观念。',
-        '坚持“两个维护”， 建设风清气正的政治 生态，增强党员的党 性观念。',
+        '坚持“两个维护”， 建设风清气正的政治 生态，增强党员的党 性观念。'
       ]
     }
   },
