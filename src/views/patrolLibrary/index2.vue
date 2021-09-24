@@ -56,6 +56,7 @@
                 icon="el-icon-edit-outline"
                 type="primary"
                 plain
+                @click="dialog_3=true"
               >编辑</el-button>
               <el-button
                 size="mini"
@@ -68,6 +69,31 @@
         </el-table>
       </div>
     </div>
+    <el-drawer
+      title="指标细则信息详情"
+      :visible.sync="dialog_3"
+      direction="rtl"
+    >
+      <div style="padding: 10px 24px 10px 23px;">
+        <div class="display_row">
+          <label class="panel-label" style="width: 128px;text-align: right">问题程度名称：</label>
+          <el-input
+            v-model="input_value_1"
+            style="width: 100%;margin-left: 10px;"
+            placeholder="请选择内容"
+          />
+        </div>
+        <div class="display_row" style="margin: 29px 0 45px;">
+          <label class="panel-label" style="width: 128px;text-align: right">状态：</label>
+          <el-checkbox v-model="checked">正常</el-checkbox>
+          <el-checkbox v-model="checked1">禁用</el-checkbox>
+        </div>
+      </div>
+      <div class="display_row" style="justify-content: center">
+        <el-button type="primary" style="width: 200px;margin-right: 16px;">保存</el-button>
+        <el-button style="width: 200px;">取消</el-button>
+      </div>
+    </el-drawer>
   </div>
 </template>
 
@@ -104,7 +130,11 @@ export default {
       switch3: false,
       switch4: false,
       dialog_1: false,
-      dialog_2: false
+      dialog_2: false,
+      dialog_3: true,
+      input_value_1: '',
+      checked: true,
+      checked1: false
     }
   }
 }
@@ -141,6 +171,15 @@ export default {
       background: white;
       border-radius: 4px;
       padding: 8px;
+    }
+  }
+  .display_row {
+    display: flex;
+    align-items: center;
+    .panel-label {
+      font-weight: 400;
+      color: #111111;
+      font-size: 12px;
     }
   }
 }
